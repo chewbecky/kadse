@@ -1,20 +1,25 @@
-// import logo from './logo.svg';
+import "./index.css";
 import "./App.css";
-import { Button, ButtonGroup } from "@chakra-ui/react";
-import { Progress } from "@chakra-ui/react";
+import "./theme";
+import TREKButton from "./components/TREKButton";
+import { ButtonGroup, Heading } from "@chakra-ui/react";
+import TREKProgress from "./components/Progress";
 
 function App() {
   return (
     <div className="App">
-      <Progress value={20} size="md" colorScheme="pink" />
-      <header className="App-header">
-        {/* <img src={logo} className="App-logo" alt="logo" /> */}
+      <div className="actions">
+        <Heading as="h1" size="4xl" color="brand.orange">
+          pomodoro timer
+        </Heading>
         <ButtonGroup>
-          <Button colorScheme="blue">Button</Button>
-          <Button colorScheme="blue">Button</Button>
-          <Button colorScheme="blue">Button</Button>
+          <TREKButton label="pomodoro" color="brand.darkCoral" />
+          <TREKButton label="long break" color="brand.orange" />
+          <TREKButton label="short break" color="brand.orange" />
+          <TREKButton label="start" color="brand.lightGreen" />
         </ButtonGroup>
-      </header>
+        <TREKProgress />
+      </div>
     </div>
   );
 }
