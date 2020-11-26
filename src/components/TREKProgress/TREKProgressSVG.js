@@ -1,4 +1,6 @@
-function TREKProgressSVG() {
+import { propNames } from "@chakra-ui/react";
+
+function TREKProgressSVG(props) {
   return (
     <svg
       width="356px"
@@ -6,6 +8,8 @@ function TREKProgressSVG() {
       viewBox="0 0 356 41"
       version="1.1"
       xmlns="http://www.w3.org/2000/svg"
+      style={{ margin: "-6px" }}
+      transform={props.rotate ? "rotate(-180)" : "rotate(0)"}
     >
       <g
         id="Symbols"
