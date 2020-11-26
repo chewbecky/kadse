@@ -1,23 +1,23 @@
 {
   "files": {
     "main.css": "/kadse/static/css/main.2703977e.chunk.css",
-    "main.js": "/kadse/static/js/main.41ff54d7.chunk.js",
-    "main.js.map": "/kadse/static/js/main.41ff54d7.chunk.js.map",
+    "main.js": "/kadse/static/js/main.b539164d.chunk.js",
+    "main.js.map": "/kadse/static/js/main.b539164d.chunk.js.map",
     "runtime-main.js": "/kadse/static/js/runtime-main.ec621817.js",
     "runtime-main.js.map": "/kadse/static/js/runtime-main.ec621817.js.map",
-    "static/js/2.07a3ac02.chunk.js": "/kadse/static/js/2.07a3ac02.chunk.js",
-    "static/js/2.07a3ac02.chunk.js.map": "/kadse/static/js/2.07a3ac02.chunk.js.map",
+    "static/js/2.5405fa1a.chunk.js": "/kadse/static/js/2.5405fa1a.chunk.js",
+    "static/js/2.5405fa1a.chunk.js.map": "/kadse/static/js/2.5405fa1a.chunk.js.map",
     "static/js/3.00b1f50e.chunk.js": "/kadse/static/js/3.00b1f50e.chunk.js",
     "static/js/3.00b1f50e.chunk.js.map": "/kadse/static/js/3.00b1f50e.chunk.js.map",
     "index.html": "/kadse/index.html",
     "static/css/main.2703977e.chunk.css.map": "/kadse/static/css/main.2703977e.chunk.css.map",
-    "static/js/2.07a3ac02.chunk.js.LICENSE.txt": "/kadse/static/js/2.07a3ac02.chunk.js.LICENSE.txt",
+    "static/js/2.5405fa1a.chunk.js.LICENSE.txt": "/kadse/static/js/2.5405fa1a.chunk.js.LICENSE.txt",
     "static/media/index.css": "/kadse/static/media/LCARSGTJ3.73fff889.ttf"
   },
   "entrypoints": [
     "static/js/runtime-main.ec621817.js",
-    "static/js/2.07a3ac02.chunk.js",
+    "static/js/2.5405fa1a.chunk.js",
     "static/css/main.2703977e.chunk.css",
-    "static/js/main.41ff54d7.chunk.js"
+    "static/js/main.b539164d.chunk.js"
   ]
 }
