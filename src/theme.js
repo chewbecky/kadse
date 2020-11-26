@@ -1,5 +1,18 @@
 import { extendTheme } from "@chakra-ui/react";
 
+export const styles = {
+  global: () => ({
+    html: {
+      overflowX: "hidden",
+      margin: 0,
+      fontFamily: "LCARSGTJ3",
+    },
+    h1: {
+      fontWeight: "normal",
+    },
+  }),
+};
+
 const theme = extendTheme({
   colors: {
     darkCoral: "#DB5F63",
@@ -19,6 +32,7 @@ const theme = extendTheme({
   colorScheme: {
     darkCoral: "#DB5F63",
   },
+  styles,
 });
 
 export default theme;
