@@ -3,10 +3,14 @@ import React, { useState, useEffect } from "react";
 import TREKProgressSVG from "./TREKProgressSVG";
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TREKProgress(props) {
 =======
 function TREKProgress() {
 >>>>>>> 💄 svg refactoring
+=======
+function TREKProgress(props) {
+>>>>>>> 💄 fix progress svg
   const [seconds, setSeconds] = useState(0);
 
   useEffect(() => {
@@ -19,12 +23,17 @@ function TREKProgress() {
 
   return (
 <<<<<<< HEAD
+<<<<<<< HEAD
     <div style={{ margin: "30px auto", width: "356px" }}>
       <TREKProgressSVG />
 =======
     <div style={{ marginRight: "auto", marginLeft: "auto", width: "356px" }}>
       <TREKProgressSVG style={{ marginBottom: "-6px" }} />
 >>>>>>> 💄 svg refactoring
+=======
+    <div style={{ margin: "30px auto", width: "356px" }}>
+      <TREKProgressSVG />
+>>>>>>> 💄 fix progress svg
       <Progress
         value={seconds}
         height="20px"
@@ -34,12 +43,16 @@ function TREKProgress() {
         isAnimated
       />
 <<<<<<< HEAD
+<<<<<<< HEAD
       <TREKProgressSVG rotate={true} />
 =======
       <TREKProgressSVG
         style={{ transform: "rotate(-180deg)", marginTop: "-6px" }}
       />
 >>>>>>> 💄 svg refactoring
+=======
+      <TREKProgressSVG rotate={true} />
+>>>>>>> 💄 fix progress svg
     </div>
   );
 }
