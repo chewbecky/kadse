@@ -2,7 +2,7 @@ import { Progress } from "@chakra-ui/react";
 import React, { useState, useEffect } from "react";
 import TREKProgressSVG from "./TREKProgressSVG";
 
-function TREKProgress() {
+function TREKProgress(props) {
   const [seconds, setSeconds] = useState(0);
 
   useEffect(() => {
@@ -14,8 +14,8 @@ function TREKProgress() {
   }, []);
 
   return (
-    <div style={{ marginRight: "auto", marginLeft: "auto", width: "356px" }}>
-      <TREKProgressSVG style={{ marginBottom: "-6px" }} />
+    <div style={{ margin: "30px auto", width: "356px" }}>
+      <TREKProgressSVG />
       <Progress
         value={seconds}
         height="20px"
@@ -24,9 +24,7 @@ function TREKProgress() {
         backgroundColor="transparent"
         isAnimated
       />
-      <TREKProgressSVG
-        style={{ transform: "rotate(-180deg)", marginTop: "-6px" }}
-      />
+      <TREKProgressSVG rotate={true} />
     </div>
   );
 }
