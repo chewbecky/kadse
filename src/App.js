@@ -3,7 +3,7 @@ import "./App.css";
 import "./theme";
 import TREKButton from "./components/TREKButton";
 import { ButtonGroup, Heading } from "@chakra-ui/react";
-import TREKProgress from "./components/TREKProgress";
+import TREKProgress from "./components/TREKProgress/TREKProgress";
 
 function App() {
   return (
