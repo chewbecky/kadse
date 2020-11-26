@@ -3,13 +3,13 @@ import "./App.css";
 import "./theme";
 import TREKButton from "./components/TREKButton";
 import { ButtonGroup, Heading } from "@chakra-ui/react";
-import TREKProgress from "./components/Progress";
+import TREKProgress from "./components/TREKProgress";
 
 function App() {
   return (
     <div className="App">
       <div className="actions">
-        <Heading as="h1" size="4xl" color="brand.orange">
+        <Heading as="h1" fontWeight="400" size="4xl" color="brand.orange">
           pomodoro timer
         </Heading>
         <ButtonGroup>

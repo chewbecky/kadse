@@ -1,6 +1,17 @@
 import { Progress } from "@chakra-ui/react";
+import React, { useState, useEffect } from "react";
 
 function TREKProgress() {
+  const [seconds, setSeconds] = useState(0);
+
+  useEffect(() => {
+    //TODO:  Change function, so that correct percentage is calculated for prograss bar from seconds.
+    const interval = setInterval(() => {
+      setSeconds((seconds) => seconds + 1);
+    }, 500);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <div style={{ marginRight: "auto", marginLeft: "auto", width: "356px" }}>
       <svg
@@ -31,7 +42,7 @@ function TREKProgress() {
         </g>
       </svg>
       <Progress
-        value={69}
+        value={seconds}
         height="20px"
         colorScheme="pink"
         style={{ width: "310px", marginRight: "auto", marginLeft: "auto" }}
