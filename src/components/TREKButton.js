@@ -15,6 +15,7 @@ function TREKButton(props) {
       display="block"
       lineHeight="14px"
       paddingTop="20px"
+      fontWeight="400"
     >
       {props.label}
     </Button>
