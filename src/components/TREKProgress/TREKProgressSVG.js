@@ -1,6 +1,10 @@
+<<<<<<< HEAD
 import { propNames } from "@chakra-ui/react";
 
 function TREKProgressSVG(props) {
+=======
+function TREKProgressSVG() {
+>>>>>>> 💄 svg refactoring
   return (
     <svg
       width="356px"
@@ -8,8 +12,11 @@ function TREKProgressSVG(props) {
       viewBox="0 0 356 41"
       version="1.1"
       xmlns="http://www.w3.org/2000/svg"
+<<<<<<< HEAD
       style={{ margin: "-6px" }}
       transform={props.rotate ? "rotate(-180)" : "rotate(0)"}
+=======
+>>>>>>> 💄 svg refactoring
     >
       <g
         id="Symbols"
