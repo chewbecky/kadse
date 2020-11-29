@@ -1,25 +1,22 @@
-import { Progress } from "@chakra-ui/react";
-import React, { useState, useEffect } from "react";
+import { Progress, Box } from "@chakra-ui/react";
+import React from "react";
 import TREKProgressSVG from "./TREKProgressSVG";
 
 function TREKProgress(props) {
   return (
-    <div style={{ margin: "30px auto", width: "356px" }}>
+    <Box {...props}>
       <TREKProgressSVG />
       <Progress
         value={props.seconds}
         height="20px"
         colorScheme="pink"
-        style={{
-          width: "310px",
-          marginRight: "auto",
-          marginLeft: "auto",
-        }}
+        px="5%"
+        width="100%"
         backgroundColor="transparent"
         isAnimated
       />
-      <TREKProgressSVG rotate={true} />
-    </div>
+      <TREKProgressSVG rotate />
+    </Box>
   );
 }
 

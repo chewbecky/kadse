@@ -13,25 +13,28 @@ function TREKBox(props) {
           path:
             "M560,-7.10542736e-15 L560,24 L200,24 C175.505067,24 156.395619,39.599346 156,64 L156,112 L0,112 L0,89.6 C0,40.1152864 40.1152864,-7.10542736e-15 89.6,-7.10542736e-15 L560,-7.10542736e-15 Z",
           viewBox: "0 0 560 112",
+          width: "560",
         };
       case "block":
         return {
           path: "M0 0 h 156 v 112 h-156 Z",
           viewBox: "0 0 156 112",
+          width: "156",
         };
       default:
         return {
           path:
             "M560,-7.10542736e-15 L560,24 L200,24 C175.505067,24 156.395619,39.599346 156,64 L156,112 L0,112 L0,89.6 C0,40.1152864 40.1152864,-7.10542736e-15 89.6,-7.10542736e-15 L560,-7.10542736e-15 Z",
           viewBox: "0 0 560 112",
+          width: "560",
         };
     }
   };
 
   return (
-    <Box {...props}>
+    <Box margin="4px 8px" {...props}>
       <svg
-        width="560px"
+        width={form(props.form).width}
         height="112px"
         viewBox={form(props.form).viewBox}
         version="1.1"
