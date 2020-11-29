@@ -4,6 +4,7 @@ import TREKProgressSVG from "./TREKProgressSVG";
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TREKProgress(props) {
 =======
 function TREKProgress() {
@@ -11,6 +12,9 @@ function TREKProgress() {
 =======
 function TREKProgress(props) {
 >>>>>>> 💄 fix progress svg
+=======
+function TREKProgress(props) {
+>>>>>>> 955ff13a9ed713deb4d5ac505d28c1d98b1dea89
   const [seconds, setSeconds] = useState(0);
 
   useEffect(() => {
@@ -24,6 +28,7 @@ function TREKProgress(props) {
   return (
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     <div style={{ margin: "30px auto", width: "356px" }}>
       <TREKProgressSVG />
 =======
@@ -34,6 +39,10 @@ function TREKProgress(props) {
     <div style={{ margin: "30px auto", width: "356px" }}>
       <TREKProgressSVG />
 >>>>>>> 💄 fix progress svg
+=======
+    <div style={{ margin: "30px auto", width: "356px" }}>
+      <TREKProgressSVG />
+>>>>>>> 955ff13a9ed713deb4d5ac505d28c1d98b1dea89
       <Progress
         value={seconds}
         height="20px"
@@ -42,6 +51,7 @@ function TREKProgress(props) {
         backgroundColor="transparent"
         isAnimated
       />
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
       <TREKProgressSVG rotate={true} />
@@ -53,6 +63,9 @@ function TREKProgress(props) {
 =======
       <TREKProgressSVG rotate={true} />
 >>>>>>> 💄 fix progress svg
+=======
+      <TREKProgressSVG rotate={true} />
+>>>>>>> 955ff13a9ed713deb4d5ac505d28c1d98b1dea89
     </div>
   );
 }
