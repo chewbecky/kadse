@@ -4,11 +4,15 @@ import "./theme";
 import TREKButton from "./components/TREKButton";
 import { ButtonGroup, Heading } from "@chakra-ui/react";
 <<<<<<< HEAD
+<<<<<<< HEAD
 import TREKProgress from "./components/TREKProgress";
 import TREKBox from "./components/TREKBox";
 =======
 import TREKProgress from "./components/TREKProgress/TREKProgress";
 >>>>>>> 💄 svg refactoring
+=======
+import TREKProgress from "./components/TREKProgress/TREKProgress";
+>>>>>>> 7fa3b57d3038dbd5234ba17847bcf3cdc9622d55
 
 function App() {
   return (
