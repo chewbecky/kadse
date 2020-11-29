@@ -1,4 +1,5 @@
 import { Button } from "@chakra-ui/react";
+import React from "react";
 
 function TREKButton(props) {
   return (
@@ -16,6 +17,7 @@ function TREKButton(props) {
       lineHeight="14px"
       paddingTop="20px"
       fontWeight="400"
+      onClick={props.onclick}
     >
       {props.label}
     </Button>
