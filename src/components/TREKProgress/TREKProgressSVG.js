@@ -1,22 +1,4 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-import { propNames } from "@chakra-ui/react";
-
 function TREKProgressSVG(props) {
-=======
-function TREKProgressSVG() {
->>>>>>> 💄 svg refactoring
-=======
-import { propNames } from "@chakra-ui/react";
-
-function TREKProgressSVG(props) {
->>>>>>> 💄 fix progress svg
-=======
-import { propNames } from "@chakra-ui/react";
-
-function TREKProgressSVG(props) {
->>>>>>> 955ff13a9ed713deb4d5ac505d28c1d98b1dea89
   return (
     <svg
       width="356px"
@@ -24,21 +6,8 @@ function TREKProgressSVG(props) {
       viewBox="0 0 356 41"
       version="1.1"
       xmlns="http://www.w3.org/2000/svg"
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
       style={{ margin: "-6px" }}
       transform={props.rotate ? "rotate(-180)" : "rotate(0)"}
-=======
->>>>>>> 💄 svg refactoring
-=======
-      style={{ margin: "-6px" }}
-      transform={props.rotate ? "rotate(-180)" : "rotate(0)"}
->>>>>>> 💄 fix progress svg
-=======
-      style={{ margin: "-6px" }}
-      transform={props.rotate ? "rotate(-180)" : "rotate(0)"}
->>>>>>> 955ff13a9ed713deb4d5ac505d28c1d98b1dea89
     >
       <g
         id="Symbols"
