@@ -1,6 +1,6 @@
 import { Box } from "@chakra-ui/react";
 import { getColor } from "@chakra-ui/theme-tools";
-
+import React from "react";
 import theme from "../theme";
 
 function TREKBox(props) {
