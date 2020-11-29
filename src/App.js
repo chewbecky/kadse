@@ -20,8 +20,20 @@ function App() {
           <TREKButton label="start" color="lightGreen" />
         </ButtonGroup>
         <TREKProgress />
-        <TREKBox title="test" tint="darkCoral" mirror="true" />
-        <TREKBox title="asdfasdfas" marginTop="2rem" tint="darkCoral" />
+        <TREKBox title="test" tint="darkCoral" mirror="true" form="curve" />
+        <TREKBox
+          title="asdfasdfas"
+          marginTop="2rem"
+          tint="darkCoral"
+          form="curve"
+        />
+        <TREKBox
+          title="Ich teste weiter"
+          marginTop="2rem"
+          tint="orange"
+          form="block"
+          mirror
+        />
       </div>
     </div>
   );
