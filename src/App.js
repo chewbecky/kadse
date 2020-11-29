@@ -44,7 +44,7 @@ function App() {
           pomodoro timer
         </Heading>
         <Heading as="h3" fontWeight="400" size="4xl" color="brand.orange">
-          {timer}
+          {`${Math.floor(timer / 60)}:${timer % 60}`}
         </Heading>
         <ButtonGroup>
           <TREKButton
