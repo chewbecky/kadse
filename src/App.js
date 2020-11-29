@@ -4,7 +4,7 @@ import "./theme";
 import TREKButton from "./components/TREKButton";
 import { ButtonGroup, Heading } from "@chakra-ui/react";
 import TREKProgress from "./components/TREKProgress/TREKProgress";
-import TREXBox from "./components/TREKBox";
+import TREKBox from "./components/TREKBox";
 
 function App() {
   return (
