@@ -41,7 +41,7 @@ function App() {
       clearInterval(interval);
     }
     return () => clearInterval(interval);
-  }, [isActive, timer]);
+  }, [isActive, play, timer]);
 
   return (
     <Flex
@@ -51,6 +51,7 @@ function App() {
       p="32px"
       backgroundImage={`url(${galaxy})`}
       backgroundSize="cover"
+      backgroundRepeat="repeat"
     >
       <Flex justifyContent="space-between" width="100%">
         <Flex direction="column" justifyContent="flex-end" alignItems="left">
