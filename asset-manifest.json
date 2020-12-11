@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/kadse/static/css/main.2703977e.chunk.css",
-    "main.js": "/kadse/static/js/main.df957409.chunk.js",
-    "main.js.map": "/kadse/static/js/main.df957409.chunk.js.map",
+    "main.css": "/kadse/static/css/main.7b7cba4e.chunk.css",
+    "main.js": "/kadse/static/js/main.1b6ed1fc.chunk.js",
+    "main.js.map": "/kadse/static/js/main.1b6ed1fc.chunk.js.map",
     "runtime-main.js": "/kadse/static/js/runtime-main.72e023aa.js",
     "runtime-main.js.map": "/kadse/static/js/runtime-main.72e023aa.js.map",
     "static/js/2.ade162e4.chunk.js": "/kadse/static/js/2.ade162e4.chunk.js",
@@ -12,7 +12,7 @@
     "static/js/4.0eee6100.chunk.js": "/kadse/static/js/4.0eee6100.chunk.js",
     "static/js/4.0eee6100.chunk.js.map": "/kadse/static/js/4.0eee6100.chunk.js.map",
     "index.html": "/kadse/index.html",
-    "static/css/main.2703977e.chunk.css.map": "/kadse/static/css/main.2703977e.chunk.css.map",
+    "static/css/main.7b7cba4e.chunk.css.map": "/kadse/static/css/main.7b7cba4e.chunk.css.map",
     "static/js/2.ade162e4.chunk.js.LICENSE.txt": "/kadse/static/js/2.ade162e4.chunk.js.LICENSE.txt",
     "static/js/3.4d3950e9.chunk.js.LICENSE.txt": "/kadse/static/js/3.4d3950e9.chunk.js.LICENSE.txt",
     "static/media/index.css": "/kadse/static/media/LCARSGTJ3.73fff889.ttf",
@@ -23,7 +23,7 @@
   "entrypoints": [
     "static/js/runtime-main.72e023aa.js",
     "static/js/2.ade162e4.chunk.js",
-    "static/css/main.2703977e.chunk.css",
-    "static/js/main.df957409.chunk.js"
+    "static/css/main.7b7cba4e.chunk.css",
+    "static/js/main.1b6ed1fc.chunk.js"
   ]
 }
