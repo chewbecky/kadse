@@ -1,7 +1,7 @@
-import { Button, propNames } from "@chakra-ui/react";
+import { Button } from "@chakra-ui/react";
 import React from "react";
 import useSound from "use-sound";
-import buttonbeep from "../sound/buttonbeep.mp3";
+import buttonbeep from "../assets/buttonbeep.mp3";
 
 function TREKButton(props) {
   const [play] = useSound(buttonbeep, {

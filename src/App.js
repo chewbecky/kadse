@@ -7,8 +7,8 @@ import TREKProgress from "./components/TREKProgress/TREKProgress";
 import TREKBox from "./components/TREKBox";
 import React, { useState, useEffect } from "react";
 import useSound from "use-sound";
-import completeSound from "./sound/regeneration_cycle_complete.mp3";
-import galaxy from "./sound/galaxy.jpg";
+import completeSound from "./assets/regeneration_cycle_complete.mp3";
+import galaxy from "./assets/galaxy.jpg";
 
 function App() {
   const [timer, setTimer] = useState(0);
