@@ -1,29 +1,29 @@
 {
   "files": {
     "main.css": "/kadse/static/css/main.7b7cba4e.chunk.css",
-    "main.js": "/kadse/static/js/main.c20ae388.chunk.js",
-    "main.js.map": "/kadse/static/js/main.c20ae388.chunk.js.map",
-    "runtime-main.js": "/kadse/static/js/runtime-main.34f9030f.js",
-    "runtime-main.js.map": "/kadse/static/js/runtime-main.34f9030f.js.map",
-    "static/js/2.92ace65d.chunk.js": "/kadse/static/js/2.92ace65d.chunk.js",
-    "static/js/2.92ace65d.chunk.js.map": "/kadse/static/js/2.92ace65d.chunk.js.map",
-    "static/js/3.042d4f23.chunk.js": "/kadse/static/js/3.042d4f23.chunk.js",
-    "static/js/3.042d4f23.chunk.js.map": "/kadse/static/js/3.042d4f23.chunk.js.map",
-    "static/js/4.be75ed46.chunk.js": "/kadse/static/js/4.be75ed46.chunk.js",
-    "static/js/4.be75ed46.chunk.js.map": "/kadse/static/js/4.be75ed46.chunk.js.map",
+    "main.js": "/kadse/static/js/main.9177b4e0.chunk.js",
+    "main.js.map": "/kadse/static/js/main.9177b4e0.chunk.js.map",
+    "runtime-main.js": "/kadse/static/js/runtime-main.889835d0.js",
+    "runtime-main.js.map": "/kadse/static/js/runtime-main.889835d0.js.map",
+    "static/js/2.815af508.chunk.js": "/kadse/static/js/2.815af508.chunk.js",
+    "static/js/2.815af508.chunk.js.map": "/kadse/static/js/2.815af508.chunk.js.map",
+    "static/js/3.956eaea2.chunk.js": "/kadse/static/js/3.956eaea2.chunk.js",
+    "static/js/3.956eaea2.chunk.js.map": "/kadse/static/js/3.956eaea2.chunk.js.map",
+    "static/js/4.096a7c46.chunk.js": "/kadse/static/js/4.096a7c46.chunk.js",
+    "static/js/4.096a7c46.chunk.js.map": "/kadse/static/js/4.096a7c46.chunk.js.map",
     "index.html": "/kadse/index.html",
     "static/css/main.7b7cba4e.chunk.css.map": "/kadse/static/css/main.7b7cba4e.chunk.css.map",
-    "static/js/2.92ace65d.chunk.js.LICENSE.txt": "/kadse/static/js/2.92ace65d.chunk.js.LICENSE.txt",
-    "static/js/3.042d4f23.chunk.js.LICENSE.txt": "/kadse/static/js/3.042d4f23.chunk.js.LICENSE.txt",
+    "static/js/2.815af508.chunk.js.LICENSE.txt": "/kadse/static/js/2.815af508.chunk.js.LICENSE.txt",
+    "static/js/3.956eaea2.chunk.js.LICENSE.txt": "/kadse/static/js/3.956eaea2.chunk.js.LICENSE.txt",
     "static/media/index.css": "/kadse/static/media/LCARSGTJ3.73fff889.ttf",
     "static/media/buttonbeep.e856bb6a.mp3": "/kadse/static/media/buttonbeep.e856bb6a.mp3",
-    "static/media/galaxy.113a3a07.jpg": "/kadse/static/media/galaxy.113a3a07.jpg",
+    "static/media/galaxy.fd387f8c.png": "/kadse/static/media/galaxy.fd387f8c.png",
     "static/media/regeneration_cycle_complete.6c7a652c.mp3": "/kadse/static/media/regeneration_cycle_complete.6c7a652c.mp3"
   },
   "entrypoints": [
-    "static/js/runtime-main.34f9030f.js",
-    "static/js/2.92ace65d.chunk.js",
+    "static/js/runtime-main.889835d0.js",
+    "static/js/2.815af508.chunk.js",
     "static/css/main.7b7cba4e.chunk.css",
-    "static/js/main.c20ae388.chunk.js"
+    "static/js/main.9177b4e0.chunk.js"
   ]
 }
