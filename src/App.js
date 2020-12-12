@@ -26,16 +26,28 @@ function App() {
     volume: 0.25,
   });
 
-  function toggle() {
+  function toggle(callback) {
     setIsActive(!isActive);
     setTimerStart(Math.floor(Date.now() / 1000) + timer);
+    if (callback) {
+      callback();
+    }
   }
 
   function initTimer(value) {
-    setTimer(value);
-    setTimerStart(value);
-    setProgressStart(value);
-    setTimerInPageTitle(value);
+    if (!isActive) {
+      setTimer(value);
+      setTimerStart(value);
+      setProgressStart(value);
+      setTimerInPageTitle(value);
+    } else {
+      toggle(() => {
+        setTimer(value);
+        setTimerStart(value);
+        setProgressStart(value);
+        setTimerInPageTitle(value);
+      });
+    }
   }
 
   useEffect(() => {
