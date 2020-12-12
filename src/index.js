@@ -5,6 +5,7 @@ import "./index.css";
 import theme from "./theme";
 import reportWebVitals from "./reportWebVitals";
 import { ChakraProvider } from "@chakra-ui/react";
+import "./assets/LCARSGTJ3.ttf";
 
 ReactDOM.render(
   <ChakraProvider theme={theme}>
