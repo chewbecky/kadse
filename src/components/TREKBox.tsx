@@ -53,16 +53,19 @@ const TREKBox: FunctionComponent<TREKBoxProps> = (props) => {
         <g id="Navigation/Edge-Down-Copy">
           <path d={path} id="Path" fill={color}></path>
           <text
-            id="Settings"
             fontFamily="LCARSGTJ3"
             fontSize="28"
             fontStyle="condensed"
             fontWeight="normal"
-            letterSpacing="-0.0466666639"
             fill="#000000"
             textAnchor="end"
+            transform={
+              props.mirror
+                ? `scale(1,-1) translate(0,-${2 * props.height - 36})`
+                : "scale(1,1)"
+            }
           >
-            <tspan x="140" y={props.mirror ? "-80" : "103.6"}>
+            <tspan x="140" y={props.height - 8}>
               {props.text}
             </tspan>
           </text>
