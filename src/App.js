@@ -50,23 +50,23 @@ function App() {
       direction="column"
       backgroundColor="black"
       height="100vh"
-      p="32px"
+      p={[1, 2, 4]}
       backgroundImage={`url(${galaxy})`}
       backgroundSize="cover"
       backgroundRepeat="repeat"
     >
       <Flex justifyContent="space-between" width="100%">
         <Flex direction="column" justifyContent="flex-end" alignItems="left">
-          <TREKBox text="test" tint="lavender" mirror={true} form="square" />
+          <TREKBox text="test" tint="lavender" mirror={true} form="block" />
           <TREKBox
-            width={560}
+            width={window.screen.availWidth / 3}
             text="test"
             tint="purple"
             mirror={true}
             form="curve"
           />
         </Flex>
-        <Flex direction="column" justifyContent="flex-end" flex="1">
+        <Flex direction="column" justifyContent="flex-end" flex="0">
           <Box
             width="100%"
             height="24px"
@@ -77,7 +77,8 @@ function App() {
         <Flex
           direction="column"
           justifyContent="space-between"
-          marginRight="8px"
+          flex="1"
+          marginLeft="8px"
         >
           <Heading
             as="h1"
@@ -123,20 +124,38 @@ function App() {
             />
           </Box>
           <Box
-            width="542px"
+            width="100%"
             height="24px"
             backgroundColor="lavender"
-            margin="4px 0px 4px 8px"
+            marginY="4px"
           ></Box>
         </Flex>
       </Flex>
       <Flex justifyContent="space-between" width="100%" flex="1">
         <Flex direction="column">
-          <TREKBox text="asdfasdfas" tint="darkCoral" form="curve" />
-          <TREKBox text="Ich teste weiter" tint="orange" form="square" mirror />
-          <TREKBox text="Ich teste weiter" tint="orange" form="long" mirror />
+          <TREKBox
+            width={window.screen.availWidth / 3}
+            text="asdfasdfas"
+            tint="darkCoral"
+            form="curve"
+          />
+          <TREKBox text="Ich teste weiter" tint="orange" form="block" mirror />
+          <TREKBox
+            text="Ich teste weiter"
+            tint="orange"
+            form="block"
+            height={50}
+            mirror
+          />
+          <Box
+            backgroundColor="orange"
+            flex="1 1 auto"
+            width="156px"
+            mx="8px"
+            my="4px"
+          ></Box>
         </Flex>
-        <Flex direction="column" justifyContent="flex-start" flex="1">
+        <Flex direction="column" justifyContent="flex-start" flex="0">
           <Box
             width="100%"
             height="24px"
@@ -145,29 +164,37 @@ function App() {
           ></Box>
         </Flex>
         <Flex
-          width="550px"
-          marginRight="8px"
+          marginLeft="8px"
           direction="column"
-          justifyContent="flex-end"
+          justifyContent="space-between"
+          flex="1"
         >
-          <Heading fontWeight="400" size="4xl" color="orange" textAlign="right">
-            {`${Math.floor(timer / 60)}:${timer % 60}`}
-          </Heading>
-          <TREKProgress
-            seconds={(timer / timerStart) * 100}
-            width="300px"
-            alignSelf="flex-end"
-          />
-          <Heading
-            as="h3"
-            fontWeight="400"
-            size="2xl"
-            color="orange"
-            textAlign="right"
-            py="16px"
-          >
-            Efficiency Mode
-          </Heading>
+          <Box height="24px" backgroundColor="lavender" marginY="4px"></Box>
+          <Flex direction="column" justifyContent="flex-end">
+            <Heading
+              fontWeight="400"
+              size="4xl"
+              color="orange"
+              textAlign="right"
+            >
+              {`${Math.floor(timer / 60)}:${timer % 60}`}
+            </Heading>
+            <TREKProgress
+              seconds={(timer / timerStart) * 100}
+              width="300px"
+              alignSelf="flex-end"
+            />
+            <Heading
+              as="h3"
+              fontWeight="400"
+              size="2xl"
+              color="orange"
+              textAlign="right"
+              py="16px"
+            >
+              Efficiency Mode
+            </Heading>
+          </Flex>
         </Flex>
       </Flex>
     </Flex>

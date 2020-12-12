@@ -21,7 +21,7 @@ const createPath = (form: string, w: number, h: number): string => {
       break;
     }
     case "block": {
-      path = `M0 0 h ${w} v ${h} h-${w} Z`;
+      path = `M0 0 h 156 v ${h} h-156 Z`;
       break;
     }
     case "default": {
