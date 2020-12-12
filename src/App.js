@@ -11,8 +11,6 @@ import useSound from "use-sound";
 import completeSound from "./assets/regeneration_cycle_complete.mp3";
 import galaxy from "./assets/galaxy.png";
 
-const start = Math.floor(Date.now() / 1000);
-
 const setTimerInPageTitle = (timer) => {
   document.title = `${Math.floor(timer / 60)
     .toString()
@@ -33,14 +31,21 @@ function App() {
     setTimerStart(Math.floor(Date.now() / 1000) + timer);
   }
 
+  function initTimer(value) {
+    setTimer(value);
+    setTimerStart(value);
+    setProgressStart(value);
+    setTimerInPageTitle(value);
+  }
+
   useEffect(() => {
     let interval = null;
     let now = null;
     if (isActive) {
       interval = setInterval(() => {
-        setTimerInPageTitle(timer);
         now = Math.floor(new Date().getTime() / 1000);
         setTimer(() => timerStart - now);
+        setTimerInPageTitle(timer - 1);
       }, 1000);
       if (timer === 0) {
         setTimerInPageTitle(timer);
@@ -105,24 +110,21 @@ function App() {
                 label="pomodoro"
                 color="darkCoral"
                 onclick={() => {
-                  setTimer(1500);
-                  setProgressStart(1500);
+                  initTimer(1500);
                 }}
               />
               <TREKButton
                 label="long break"
                 color="orange"
                 onclick={() => {
-                  setTimer(900);
-                  setProgressStart(900);
+                  initTimer(900);
                 }}
               />
               <TREKButton
                 label="short break"
                 color="orange"
                 onclick={() => {
-                  setTimer(10);
-                  setProgressStart(10);
+                  initTimer(300);
                 }}
               />
               <TREKButton
