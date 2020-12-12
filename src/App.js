@@ -7,6 +7,7 @@ import TREKProgress from "./components/TREKProgress/TREKProgress";
 import TREKBox from "./components/TREKBox";
 import React, { useState, useEffect } from "react";
 import useSound from "use-sound";
+// @ts-ignore
 import completeSound from "./assets/regeneration_cycle_complete.mp3";
 import galaxy from "./assets/galaxy.jpg";
 
@@ -17,6 +18,7 @@ function App() {
   const [play] = useSound(completeSound, {
     volume: 0.25,
   });
+
   function toggle() {
     setIsActive(!isActive);
   }
@@ -55,8 +57,14 @@ function App() {
     >
       <Flex justifyContent="space-between" width="100%">
         <Flex direction="column" justifyContent="flex-end" alignItems="left">
-          <TREKBox title="test" tint="lavender" mirror="true" form="block" />
-          <TREKBox title="test" tint="purple" mirror="true" form="curve" />
+          <TREKBox text="test" tint="lavender" mirror={true} form="square" />
+          <TREKBox
+            width={560}
+            text="test"
+            tint="purple"
+            mirror={true}
+            form="curve"
+          />
         </Flex>
         <Flex direction="column" justifyContent="flex-end" flex="1">
           <Box
@@ -124,8 +132,9 @@ function App() {
       </Flex>
       <Flex justifyContent="space-between" width="100%" flex="1">
         <Flex direction="column">
-          <TREKBox title="asdfasdfas" tint="darkCoral" form="curve" />
-          <TREKBox title="Ich teste weiter" tint="orange" form="block" mirror />
+          <TREKBox text="asdfasdfas" tint="darkCoral" form="curve" />
+          <TREKBox text="Ich teste weiter" tint="orange" form="square" mirror />
+          <TREKBox text="Ich teste weiter" tint="orange" form="long" mirror />
         </Flex>
         <Flex direction="column" justifyContent="flex-start" flex="1">
           <Box
