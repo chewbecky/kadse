@@ -11,28 +11,29 @@ import useSound from "use-sound";
 import completeSound from "./assets/regeneration_cycle_complete.mp3";
 import galaxy from "./assets/galaxy.png";
 
+const start = Math.floor(Date.now() / 1000);
+
 function App() {
   const [timer, setTimer] = useState(0);
   const [isActive, setIsActive] = useState(false);
   const [timerStart, setTimerStart] = useState(0);
+  const [progressStart, setProgressStart] = useState(0);
   const [play] = useSound(completeSound, {
     volume: 0.25,
   });
 
   function toggle() {
     setIsActive(!isActive);
-  }
-
-  function setTimerAndStart(value) {
-    setTimer(value);
-    setTimerStart(value);
+    setTimerStart(Math.floor(Date.now() / 1000) + timer);
   }
 
   useEffect(() => {
     let interval = null;
+    let now = null;
     if (isActive) {
       interval = setInterval(() => {
-        setTimer((timer) => timer - 1);
+        now = Math.floor(new Date().getTime() / 1000);
+        setTimer(() => timerStart - now);
       }, 1000);
       if (timer === 0) {
         clearInterval(interval);
@@ -77,7 +78,7 @@ function App() {
           flex="5"
           marginLeft="8px"
         >
-          <Box position="absolute" top="8px" right="16px">
+          <Box position="absolute" top="20px" right="16px">
             <Heading
               as="h1"
               fontWeight="400"
@@ -96,21 +97,24 @@ function App() {
                 label="pomodoro"
                 color="darkCoral"
                 onclick={() => {
-                  setTimerAndStart(1500);
+                  setTimer(1500);
+                  setProgressStart(1500);
                 }}
               />
               <TREKButton
                 label="long break"
                 color="orange"
                 onclick={() => {
-                  setTimerAndStart(900);
+                  setTimer(900);
+                  setProgressStart(900);
                 }}
               />
               <TREKButton
                 label="short break"
                 color="orange"
                 onclick={() => {
-                  setTimerAndStart(10);
+                  setTimer(10);
+                  setProgressStart(10);
                 }}
               />
               <TREKButton
@@ -187,21 +191,28 @@ function App() {
                 size="4xl"
                 color="orange"
                 textAlign="right"
+                sx={{ "font-variant-numeric": "tabular-nums" }}
               >
-                <Box display="inline-block" width="3.5rem">{`${
-                  timer
-                    ? Math.floor(timer / 60)
-                        .toString()
-                        .padStart(2, "0")
-                    : "00"
+                <Box display="inline-block" width="24px">{`${
+                  timer ? Math.floor(timer / 60 / 10) : "0"
+                }`}</Box>
+                <Box display="inline-block" width="24px">{`${
+                  timer ? Math.floor(timer / 60) % 10 : "0"
                 }`}</Box>
                 :
-                <Box display="inline-block" width="3.5rem">{`${
-                  timer ? (timer % 60).toString().padStart(2, "0") : "00"
+                <Box display="inline-block" width="24px">{`${
+                  timer ? Math.floor((timer % 60) / 10) : "0"
+                }`}</Box>
+                <Box display="inline-block" width="24px">{`${
+                  timer ? (timer % 60) % 10 : "0"
                 }`}</Box>
               </Heading>
               <TREKProgress
-                seconds={timer ? (timer / timerStart) * 100 : 0}
+                seconds={
+                  timer && progressStart
+                    ? Math.floor((timer / progressStart) * 100)
+                    : 0
+                }
                 width="300px"
                 alignSelf="flex-end"
               />
