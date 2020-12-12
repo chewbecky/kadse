@@ -13,6 +13,12 @@ import galaxy from "./assets/galaxy.png";
 
 const start = Math.floor(Date.now() / 1000);
 
+const setTimerInPageTitle = (timer) => {
+  document.title = `${Math.floor(timer / 60)
+    .toString()
+    .padStart(2, 0)}:${(timer % 60).toString().padStart(2, 0)}`;
+};
+
 function App() {
   const [timer, setTimer] = useState(0);
   const [isActive, setIsActive] = useState(false);
@@ -32,10 +38,12 @@ function App() {
     let now = null;
     if (isActive) {
       interval = setInterval(() => {
+        setTimerInPageTitle(timer);
         now = Math.floor(new Date().getTime() / 1000);
         setTimer(() => timerStart - now);
       }, 1000);
       if (timer === 0) {
+        setTimerInPageTitle(timer);
         clearInterval(interval);
         setIsActive(!isActive);
         play();
