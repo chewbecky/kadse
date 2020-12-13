@@ -58,18 +58,19 @@ function App() {
         now = Math.floor(new Date().getTime() / 1000);
         setTimer(() => timerStart - now);
         setTimerInPageTitle(timer - 1);
+        if (timer === 0) {
+          setTimerInPageTitle(timer);
+          clearInterval(interval);
+          setIsActive(!isActive);
+          setTimer(0);
+          play();
+        }
       }, 1000);
-      if (timer === 0) {
-        setTimerInPageTitle(timer);
-        clearInterval(interval);
-        setIsActive(!isActive);
-        play();
-      }
     } else if (!isActive) {
       clearInterval(interval);
     }
     return () => clearInterval(interval);
-  }, [isActive, play, timer]);
+  }, [isActive, play, timer, timerStart]);
 
   return (
     <Flex
@@ -136,7 +137,7 @@ function App() {
                 label="short break"
                 color="orange"
                 onclick={() => {
-                  initTimer(300);
+                  initTimer(10);
                 }}
               />
               <TREKButton
