@@ -50,9 +50,9 @@ const TREKTimer: FunctionComponent<TREKTimerProps> = (props) => {
   }, [props.isActive, isActiveProp, isActive, progressMemory]);
 
   useEffect(() => {
+    setTimerInPageTitle(timer);
     if (isActive) {
       timeoutID.current = window.setTimeout(() => {
-        setTimerInPageTitle(timer - 1);
         setTimer(timerStart - Math.floor(new Date().getTime() / 1000));
       }, 1000);
       if (timer === 0) {
