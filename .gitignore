@@ -18,6 +18,7 @@
 .env.test.local
 .env.production.local
 jsconfig.json
+tsconfig.json
 .eslintcache
 
 npm-debug.log*

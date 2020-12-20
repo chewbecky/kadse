@@ -3,74 +3,14 @@ import "./App.css";
 import "./theme";
 import TREKButton from "./components/TREKButton";
 import { Box, Flex, Heading, SimpleGrid } from "@chakra-ui/react";
-import TREKProgress from "./components/TREKProgress/TREKProgress";
 import TREKBox from "./components/TREKBox";
-import React, { useState, useEffect } from "react";
-import useSound from "use-sound";
-// @ts-ignore
-import completeSound from "./assets/regeneration_cycle_complete.mp3";
+import TREKTimer from "./components/TREKTimer/TREKTimer";
+import React, { useState } from "react";
 import galaxy from "./assets/galaxy.png";
-
-const setTimerInPageTitle = (timer) => {
-  document.title = `${Math.floor(timer / 60)
-    .toString()
-    .padStart(2, 0)}:${(timer % 60).toString().padStart(2, 0)}`;
-};
 
 function App() {
   const [timer, setTimer] = useState(0);
   const [isActive, setIsActive] = useState(false);
-  const [timerStart, setTimerStart] = useState(0);
-  const [progressStart, setProgressStart] = useState(0);
-  const [play] = useSound(completeSound, {
-    volume: 0.25,
-  });
-
-  function toggle(callback) {
-    setIsActive(!isActive);
-    setTimerStart(Math.floor(Date.now() / 1000) + timer);
-    if (callback) {
-      callback();
-    }
-  }
-
-  function initTimer(value) {
-    if (!isActive) {
-      setTimer(value);
-      setTimerStart(value);
-      setProgressStart(value);
-      setTimerInPageTitle(value);
-    } else {
-      toggle(() => {
-        setTimer(value);
-        setTimerStart(value);
-        setProgressStart(value);
-        setTimerInPageTitle(value);
-      });
-    }
-  }
-
-  useEffect(() => {
-    let interval = null;
-    let now = null;
-    if (isActive) {
-      interval = setInterval(() => {
-        now = Math.floor(new Date().getTime() / 1000);
-        setTimer(() => timerStart - now);
-        setTimerInPageTitle(timer - 1);
-        if (timer === 0) {
-          setTimerInPageTitle(timer);
-          clearInterval(interval);
-          setIsActive(!isActive);
-          setTimer(0);
-          play();
-        }
-      }, 1000);
-    } else if (!isActive) {
-      clearInterval(interval);
-    }
-    return () => clearInterval(interval);
-  }, [isActive, play, timer, timerStart]);
 
   return (
     <Flex
@@ -123,27 +63,29 @@ function App() {
                 label="pomodoro"
                 color="darkCoral"
                 onclick={() => {
-                  initTimer(1500);
+                  setTimer(1500);
                 }}
               />
               <TREKButton
                 label="long break"
                 color="orange"
                 onclick={() => {
-                  initTimer(900);
+                  setTimer(900);
                 }}
               />
               <TREKButton
                 label="short break"
                 color="orange"
                 onclick={() => {
-                  initTimer(10);
+                  setTimer(10);
                 }}
               />
               <TREKButton
                 label="start/stop"
                 color="lightGreen"
-                onclick={() => toggle()}
+                onclick={() => {
+                  setIsActive(!isActive);
+                }}
               />
             </SimpleGrid>
           </Box>
@@ -208,48 +150,7 @@ function App() {
         >
           <Box height="24px" backgroundColor="lavender" marginY="4px"></Box>
           <Box position="absolute" bottom="16px" right="16px">
-            <Flex direction="column" justifyContent="flex-end">
-              <Heading
-                fontWeight="400"
-                size="4xl"
-                color="orange"
-                textAlign="right"
-                sx={{ "font-variant-numeric": "tabular-nums" }}
-              >
-                <Box display="inline-block" width="24px">{`${
-                  timer ? Math.floor(timer / 60 / 10) : "0"
-                }`}</Box>
-                <Box display="inline-block" width="24px">{`${
-                  timer ? Math.floor(timer / 60) % 10 : "0"
-                }`}</Box>
-                :
-                <Box display="inline-block" width="24px">{`${
-                  timer ? Math.floor((timer % 60) / 10) : "0"
-                }`}</Box>
-                <Box display="inline-block" width="24px">{`${
-                  timer ? (timer % 60) % 10 : "0"
-                }`}</Box>
-              </Heading>
-              <TREKProgress
-                seconds={
-                  timer && progressStart
-                    ? Math.floor((timer / progressStart) * 100)
-                    : 0
-                }
-                width="300px"
-                alignSelf="flex-end"
-              />
-              <Heading
-                as="h3"
-                fontWeight="400"
-                size="2xl"
-                color="orange"
-                textAlign="right"
-                py="16px"
-              >
-                Efficiency Mode
-              </Heading>
-            </Flex>
+            <TREKTimer value={timer} isActive={isActive}></TREKTimer>
           </Box>
         </Flex>
       </Flex>
