@@ -23,7 +23,7 @@ function App() {
         <Flex direction="column" justifyContent="flex-end" alignItems="left">
           <TREKBox text="LCARS" tint="lavender" mirror={true} form="block" />
           <TREKBox
-            width={window.screen.availWidth / 3}
+            width={window.innerWidth / 3}
             text="NCC-74656"
             tint="purple"
             mirror={true}
@@ -108,7 +108,7 @@ function App() {
       >
         <Flex direction="column">
           <TREKBox
-            width={window.screen.availWidth / 3}
+            width={window.innerWidth / 3}
             text="Captain"
             tint="darkCoral"
             form="curve"

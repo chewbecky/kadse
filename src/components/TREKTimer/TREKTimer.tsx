@@ -29,7 +29,6 @@ const TREKTimer: FunctionComponent<TREKTimerProps> = (props) => {
   let timeoutID = useRef(0);
 
   useEffect(() => {
-    console.log("set timer with prop", props.value);
     if (timeoutID.current > 0) {
       clearTimeout(timeoutID.current);
     }
@@ -41,7 +40,6 @@ const TREKTimer: FunctionComponent<TREKTimerProps> = (props) => {
   }, [props.value]);
 
   useEffect(() => {
-    console.log("isActive change", props.isActive, isActiveProp, isActive);
     if (props.isActive !== isActiveProp) {
       setIsActive(!isActive);
       setIsActiveProps(props.isActive);

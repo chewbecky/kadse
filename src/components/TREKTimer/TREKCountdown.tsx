@@ -17,7 +17,7 @@ const TREKCountdown: FunctionComponent<TREKCountdownProps> = (props) => {
   }, [props.timer, props.progressStart]);
 
   return (
-    <Flex direction="column" justifyContent="flex-end" {...props}>
+    <Flex direction="column" justifyContent="flex-end">
       <Heading fontWeight="400" size="4xl" color="orange" textAlign="right">
         <Box display="inline-block" width="24px">{`${
           timer ? Math.floor(timer / 60 / 10) : "0"

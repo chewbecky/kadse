@@ -39,11 +39,7 @@ const TREKBox: FunctionComponent<TREKBoxProps> = (props) => {
   const viewport = `0 0 ${props.width} ${props.height}`;
 
   return (
-    <Box
-      margin="4px 8px"
-      {...props}
-      transform={props.mirror ? "rotateX(180deg)" : "none"}
-    >
+    <Box margin="4px 8px" transform={props.mirror ? "rotateX(180deg)" : "none"}>
       <svg
         width={props.width}
         viewBox={viewport}
