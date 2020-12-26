@@ -8,6 +8,11 @@
       "src": "favicon.svg",
       "purpose": "maskable any",
       "sizes": "any"
+    },
+    {
+      "src": "apple-touch-icon.png",
+      "type": "image/png",
+      "sizes": "180x180"
     }
   ],
   "start_url": ".",
