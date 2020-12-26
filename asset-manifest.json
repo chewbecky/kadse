@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/kadse/static/css/main.7b7cba4e.chunk.css",
-    "main.js": "/kadse/static/js/main.4960313a.chunk.js",
-    "main.js.map": "/kadse/static/js/main.4960313a.chunk.js.map",
+    "main.js": "/kadse/static/js/main.a4fd4f71.chunk.js",
+    "main.js.map": "/kadse/static/js/main.a4fd4f71.chunk.js.map",
     "runtime-main.js": "/kadse/static/js/runtime-main.889835d0.js",
     "runtime-main.js.map": "/kadse/static/js/runtime-main.889835d0.js.map",
     "static/js/2.6b2763e4.chunk.js": "/kadse/static/js/2.6b2763e4.chunk.js",
@@ -26,6 +26,6 @@
     "static/js/runtime-main.889835d0.js",
     "static/js/2.6b2763e4.chunk.js",
     "static/css/main.7b7cba4e.chunk.css",
-    "static/js/main.4960313a.chunk.js"
+    "static/js/main.a4fd4f71.chunk.js"
   ]
 }
