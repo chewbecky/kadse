@@ -7,6 +7,7 @@ import TREKBox from "./components/TREKBox";
 import TREKTimer from "./components/TREKTimer/TREKTimer";
 import React, { useState } from "react";
 import galaxy from "./assets/galaxy.png";
+import voyager from "./assets/voyager-status.mp4";
 
 function App() {
   const [timer, setTimer] = useState(0);
@@ -21,6 +22,12 @@ function App() {
     }
   };
 
+  const timerSettings = {
+    pomodoro: 1500,
+    shortBreak: 10,
+    longBreak: 900,
+  };
+
   return (
     <Flex
       direction="column"
@@ -28,8 +35,24 @@ function App() {
       height="100vh"
       p={[1, 2, 4]}
     >
-      <Flex justifyContent="space-between" width="100%">
-        <Flex direction="column" justifyContent="flex-end" alignItems="left">
+      <Box
+        position="absolute"
+        top={["400px", "320px"]}
+        left={["10%", "32%"]}
+        w={["80%", "50%"]}
+        m="0 auto"
+      >
+        <video autoPlay loop>
+          <source src={voyager} type="video/mp4" />
+        </video>
+      </Box>
+      <Flex justifyContent="space-between" width="100%" zIndex="9999">
+        <Flex
+          direction="column"
+          justifyContent="flex-end"
+          alignItems="left"
+          visibility={["hidden", "visible"]}
+        >
           <TREKBox text="LCARS" tint="lavender" mirror={true} form="block" />
           <TREKBox
             width={window.innerWidth / 3}
@@ -39,7 +62,12 @@ function App() {
             form="curve"
           />
         </Flex>
-        <Flex direction="column" justifyContent="flex-end" flex="1">
+        <Flex
+          direction="column"
+          justifyContent="flex-end"
+          flex="1"
+          visibility={["hidden", "visible"]}
+        >
           <Box
             width="100%"
             height="24px"
@@ -64,29 +92,30 @@ function App() {
               pomodoro timer
             </Heading>
             <SimpleGrid
-              gridTemplateColumns="192px 192px"
+              gridTemplateColumns={["192px", "192px 192px"]}
               gridTemplateRows="auto"
               gridGap="8px"
+              float="right"
             >
               <TREKButton
                 label="pomodoro"
                 color="darkCoral"
                 onclick={() => {
-                  setOrResetTimer(1500);
+                  setOrResetTimer(timerSettings.pomodoro);
                 }}
               />
               <TREKButton
                 label="long break"
                 color="orange"
                 onclick={() => {
-                  setOrResetTimer(300);
+                  setOrResetTimer(timerSettings.longBreak);
                 }}
               />
               <TREKButton
                 label="short break"
                 color="orange"
                 onclick={() => {
-                  setOrResetTimer(10);
+                  setOrResetTimer(timerSettings.shortBreak);
                 }}
               />
               <TREKButton
@@ -103,19 +132,21 @@ function App() {
             height="24px"
             backgroundColor="lavender"
             marginY="4px"
+            visibility={["hidden", "visible"]}
           ></Box>
         </Flex>
       </Flex>
       <Flex
+        zIndex="9999"
         justifyContent="space-between"
         width="100%"
         flex="1"
-        backgroundImage={`url(${galaxy})`}
+        /* backgroundImage={`url(${galaxy})`}
         backgroundSize="contain"
         backgroundPosition="center"
-        backgroundRepeat="no-repeat"
+        backgroundRepeat="no-repeat" */
       >
-        <Flex direction="column">
+        <Flex direction="column" visibility={["hidden", "visible"]}>
           <TREKBox
             width={window.innerWidth / 3}
             text="Captain"
@@ -143,12 +174,14 @@ function App() {
           justifyContent="flex-start"
           flex="1"
           flexBasis="200px"
+          visibility={["hidden", "visible"]}
         >
           <Box
             width="100%"
             height="24px"
             backgroundColor="lavender"
             margin="4px 8px 4px 0px"
+            visibility={["hidden", "visible"]}
           ></Box>
         </Flex>
         <Flex
@@ -157,7 +190,12 @@ function App() {
           justifyContent="space-between"
           flex="5"
         >
-          <Box height="24px" backgroundColor="lavender" marginY="4px"></Box>
+          <Box
+            height="24px"
+            backgroundColor="lavender"
+            marginY="4px"
+            visibility={["hidden", "visible"]}
+          ></Box>
           <Box position="absolute" bottom="16px" right="16px">
             <TREKTimer
               value={timer}

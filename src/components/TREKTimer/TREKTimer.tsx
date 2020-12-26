@@ -20,7 +20,7 @@ const setTimerInPageTitle = (timer: number) => {
 const TREKTimer: FunctionComponent<TREKTimerProps> = (props) => {
   const [timer, setTimer] = useState(props.value);
   const [timerStart, setTimerStart] = useState(0);
-  const [isActive, setIsActive] = useState(false);
+  const [isActive, setIsActive] = useState(true);
   const [toggleActive, setToggleActive] = useState(false);
   const [progressStart, setProgressStart] = useState(props.value);
   const [play] = useSound(completeSound, {
@@ -30,7 +30,7 @@ const TREKTimer: FunctionComponent<TREKTimerProps> = (props) => {
 
   useEffect(() => {
     console.log("use effect init");
-    setToggleActive(!toggleActive);
+    setIsActive(false);
     if (timeoutID.current > 0) {
       clearTimeout(timeoutID.current);
     }
@@ -59,12 +59,12 @@ const TREKTimer: FunctionComponent<TREKTimerProps> = (props) => {
         setTimer(timerStart - Math.floor(new Date().getTime() / 1000));
       }, 1000);
       if (timer <= 0) {
-        new Notification("🖖 Regeneration Cycle Complete!", {
+        /* new Notification("🖖 Regeneration Cycle Complete!", {
           icon: "kadse/apple-touch-icon.png",
           body: "Pormodor yo!",
           image:
             "https://i.pinimg.com/originals/96/48/68/964868019877993647b63d028761a052.png",
-        });
+        }); */
         setTimer(0);
         play();
         setToggleActive(false);
