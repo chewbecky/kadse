@@ -1,16 +1,23 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Pomodoro",
+  "name": "Star Trek Promodor Timer",
+  "description": "This is a simple pomodoro timer, made with ❤️ for Star Trek 🖖",
+  "background-color": "#FF9400",
   "icons": [
     {
       "src": "favicon.svg",
       "purpose": "maskable any",
       "sizes": "any"
+    },
+    {
+      "src": "apple-touch-icon.png",
+      "type": "image/png",
+      "sizes": "180x180"
     }
   ],
   "start_url": ".",
-  "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff",
-  "orientation": "landscape"
+  "display": "minimal-ui",
+  "theme_color": "#FF9400",
+  "background_color": "#FF9400",
+  "orientation": "any"
 }
