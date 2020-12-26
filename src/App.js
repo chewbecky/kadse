@@ -44,6 +44,7 @@ function App() {
         m="0 auto"
         autoPlay
         muted
+        loop
       >
         <source src={voyager} type="video/mp4" />
       </Box>
