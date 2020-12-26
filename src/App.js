@@ -36,15 +36,16 @@ function App() {
       p={[1, 2, 4]}
     >
       <Box
+        as="video"
         position="absolute"
         top={["400px", "320px"]}
         left={["10%", "32%"]}
         w={["80%", "50%"]}
         m="0 auto"
+        autoPlay
+        muted
       >
-        <video autoPlay loop>
-          <source src={voyager} type="video/mp4" />
-        </video>
+        <source src={voyager} type="video/mp4" />
       </Box>
       <Flex justifyContent="space-between" width="100%" zIndex="9999">
         <Flex
