@@ -10,7 +10,16 @@ import galaxy from "./assets/galaxy.png";
 
 function App() {
   const [timer, setTimer] = useState(0);
-  const [isActive, setIsActive] = useState(false);
+  const [toggleActive, setToggleActive] = useState(false);
+  const [reset, setReset] = useState(false);
+
+  const setOrResetTimer = function (value) {
+    if (timer === value) {
+      setReset(!reset);
+    } else {
+      setTimer(value);
+    }
+  };
 
   return (
     <Flex
@@ -63,28 +72,28 @@ function App() {
                 label="pomodoro"
                 color="darkCoral"
                 onclick={() => {
-                  setTimer(1500);
+                  setOrResetTimer(1500);
                 }}
               />
               <TREKButton
                 label="long break"
                 color="orange"
                 onclick={() => {
-                  setTimer(900);
+                  setOrResetTimer(300);
                 }}
               />
               <TREKButton
                 label="short break"
                 color="orange"
                 onclick={() => {
-                  setTimer(10);
+                  setOrResetTimer(10);
                 }}
               />
               <TREKButton
                 label="start/stop"
                 color="lightGreen"
                 onclick={() => {
-                  setIsActive(!isActive);
+                  setToggleActive(!toggleActive);
                 }}
               />
             </SimpleGrid>
@@ -150,7 +159,11 @@ function App() {
         >
           <Box height="24px" backgroundColor="lavender" marginY="4px"></Box>
           <Box position="absolute" bottom="16px" right="16px">
-            <TREKTimer value={timer} isActive={isActive}></TREKTimer>
+            <TREKTimer
+              value={timer}
+              toggleActive={toggleActive}
+              reset={reset}
+            ></TREKTimer>
           </Box>
         </Flex>
       </Flex>

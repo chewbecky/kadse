@@ -6,8 +6,9 @@ import TREKCountdown from "./TREKCountdown";
 
 interface TREKTimerProps {
   value: number;
-  isActive: boolean;
+  toggleActive: boolean;
   timerStart: number;
+  reset: boolean;
 }
 
 const setTimerInPageTitle = (timer: number) => {
@@ -20,9 +21,8 @@ const TREKTimer: FunctionComponent<TREKTimerProps> = (props) => {
   const [timer, setTimer] = useState(props.value);
   const [timerStart, setTimerStart] = useState(0);
   const [isActive, setIsActive] = useState(false);
-  const [isActiveProp, setIsActiveProps] = useState(props.isActive);
+  const [toggleActive, setToggleActive] = useState(false);
   const [progressStart, setProgressStart] = useState(props.value);
-  const [progressMemory, setProgressMemory] = useState(0);
   const [play] = useSound(completeSound, {
     volume: 0.25,
   });
@@ -35,17 +35,13 @@ const TREKTimer: FunctionComponent<TREKTimerProps> = (props) => {
     setIsActive(false);
     setTimerStart(0);
     setProgressStart(props.value);
-    setProgressMemory(props.value);
     setTimer(props.value);
-  }, [props.value]);
+  }, [props.value, props.reset]);
 
   useEffect(() => {
-    if (props.isActive !== isActiveProp) {
-      setIsActive(!isActive);
-      setIsActiveProps(props.isActive);
-      setTimerStart(Math.floor(new Date().getTime() / 1000) + progressMemory);
-    }
-  }, [props.isActive, isActiveProp, isActive, progressMemory]);
+    setIsActive(!isActive);
+    setTimerStart(Math.floor(new Date().getTime() / 1000) + timer);
+  }, [props.toggleActive, toggleActive]); // eslint-disable-line react-hooks/exhaustive-deps
 
   useEffect(() => {
     setTimerInPageTitle(timer);
@@ -53,13 +49,11 @@ const TREKTimer: FunctionComponent<TREKTimerProps> = (props) => {
       timeoutID.current = window.setTimeout(() => {
         setTimer(timerStart - Math.floor(new Date().getTime() / 1000));
       }, 1000);
-      if (timer === 0) {
+      if (timer <= 0) {
         play();
-        setIsActive(false);
+        setToggleActive(false);
         clearTimeout(timeoutID.current);
       }
-    } else {
-      setProgressMemory(timer);
     }
   }, [timer, timerStart, play, isActive, setIsActive]);
 
