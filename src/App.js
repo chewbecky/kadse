@@ -48,7 +48,7 @@ function App() {
       >
         <source src={voyager} type="video/mp4" />
       </Box>
-      <Flex justifyContent="space-between" width="100%" zIndex="9999">
+      <Flex justifyContent="space-between" width="100%">
         <Flex
           direction="column"
           justifyContent="flex-end"
@@ -139,7 +139,6 @@ function App() {
         </Flex>
       </Flex>
       <Flex
-        zIndex="9999"
         justifyContent="space-between"
         width="100%"
         flex="1"
