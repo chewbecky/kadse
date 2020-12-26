@@ -29,33 +29,49 @@ const TREKTimer: FunctionComponent<TREKTimerProps> = (props) => {
   let timeoutID = useRef(0);
 
   useEffect(() => {
+    console.log("use effect init");
+    setToggleActive(!toggleActive);
     if (timeoutID.current > 0) {
       clearTimeout(timeoutID.current);
     }
-    setIsActive(false);
     setTimerStart(0);
     setProgressStart(props.value);
+
     setTimer(props.value);
-  }, [props.value, props.reset]);
+  }, [props.value, props.reset]); // eslint-disable-line react-hooks/exhaustive-deps
 
   useEffect(() => {
-    setIsActive(!isActive);
-    setTimerStart(Math.floor(new Date().getTime() / 1000) + timer);
+    console.log("use effect toggle");
+    if (timer > 0) {
+      setIsActive(!isActive);
+      setTimerStart(Math.floor(new Date().getTime() / 1000) + timer);
+    } else {
+      setIsActive(false);
+    }
   }, [props.toggleActive, toggleActive]); // eslint-disable-line react-hooks/exhaustive-deps
 
   useEffect(() => {
+    console.log("use effect timer", timer, isActive, timerStart);
+
     setTimerInPageTitle(timer);
-    if (isActive) {
+    if (isActive && timerStart > 0) {
       timeoutID.current = window.setTimeout(() => {
         setTimer(timerStart - Math.floor(new Date().getTime() / 1000));
       }, 1000);
       if (timer <= 0) {
+        new Notification("🖖 Regeneration Cycle Complete!", {
+          icon: "kadse/apple-touch-icon.png",
+          body: "Pormodor yo!",
+          image:
+            "https://i.pinimg.com/originals/96/48/68/964868019877993647b63d028761a052.png",
+        });
+        setTimer(0);
         play();
         setToggleActive(false);
         clearTimeout(timeoutID.current);
       }
     }
-  }, [timer, timerStart, play, isActive, setIsActive]);
+  }, [timer, isActive]); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <TREKCountdown timer={timer} progressStart={progressStart}></TREKCountdown>
