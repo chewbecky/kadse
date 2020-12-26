@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/kadse/static/css/main.7b7cba4e.chunk.css",
-    "main.js": "/kadse/static/js/main.506f0de5.chunk.js",
-    "main.js.map": "/kadse/static/js/main.506f0de5.chunk.js.map",
+    "main.js": "/kadse/static/js/main.a40c186b.chunk.js",
+    "main.js.map": "/kadse/static/js/main.a40c186b.chunk.js.map",
     "runtime-main.js": "/kadse/static/js/runtime-main.889835d0.js",
     "runtime-main.js.map": "/kadse/static/js/runtime-main.889835d0.js.map",
     "static/js/2.6b2763e4.chunk.js": "/kadse/static/js/2.6b2763e4.chunk.js",
@@ -12,6 +12,8 @@
     "static/js/4.096a7c46.chunk.js": "/kadse/static/js/4.096a7c46.chunk.js",
     "static/js/4.096a7c46.chunk.js.map": "/kadse/static/js/4.096a7c46.chunk.js.map",
     "index.html": "/kadse/index.html",
+    "service-worker.js": "/kadse/service-worker.js",
+    "service-worker.js.map": "/kadse/service-worker.js.map",
     "static/css/main.7b7cba4e.chunk.css.map": "/kadse/static/css/main.7b7cba4e.chunk.css.map",
     "static/js/2.6b2763e4.chunk.js.LICENSE.txt": "/kadse/static/js/2.6b2763e4.chunk.js.LICENSE.txt",
     "static/js/3.956eaea2.chunk.js.LICENSE.txt": "/kadse/static/js/3.956eaea2.chunk.js.LICENSE.txt",
@@ -24,6 +26,6 @@
     "static/js/runtime-main.889835d0.js",
     "static/js/2.6b2763e4.chunk.js",
     "static/css/main.7b7cba4e.chunk.css",
-    "static/js/main.506f0de5.chunk.js"
+    "static/js/main.a40c186b.chunk.js"
   ]
 }
