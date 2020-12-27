@@ -16,7 +16,7 @@
     }
   ],
   "start_url": ".",
-  "display": "minimal-ui",
+  "display": "fullscreen",
   "theme_color": "#FF9400",
   "background_color": "#FF9400",
   "orientation": "any"
