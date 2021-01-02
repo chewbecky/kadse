@@ -1,21 +1,21 @@
-import { Progress, Box } from "@chakra-ui/react";
+import { Box, Flex, Progress, SimpleGrid } from "@chakra-ui/react";
 import React from "react";
 import TREKProgressSVG from "./TREKProgressSVG";
 
 function TREKProgress(props) {
   return (
-    <Box {...props}>
-      <TREKProgressSVG />
+    <Box>
+      <TREKProgressSVG rotate={0} tint="lightOrange" />
       <Progress
         value={props.seconds}
-        height="20px"
+        height="12px"
         colorScheme="pink"
-        px="5%"
+        px="4%"
         width="100%"
         backgroundColor="transparent"
         isAnimated
       />
-      <TREKProgressSVG rotate />
+      <TREKProgressSVG rotate={1} tint="lightOrange" />
     </Box>
   );
 }

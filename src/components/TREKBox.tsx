@@ -4,12 +4,12 @@ import React, { FunctionComponent } from "react";
 import theme from "../theme";
 
 interface TREKBoxProps {
-  form: string;
-  width: number;
-  height: number;
-  tint: string;
-  text: string;
-  mirror: boolean;
+  form?: string;
+  width?: number;
+  height?: number;
+  tint?: string;
+  text?: string;
+  mirror?: boolean;
 }
 
 const createPath = (form: string, w: number, h: number): string => {
@@ -35,11 +35,11 @@ const createPath = (form: string, w: number, h: number): string => {
 
 const TREKBox: FunctionComponent<TREKBoxProps> = (props) => {
   const color = props.tint ? getColor(theme, props.tint) : "orange";
-  const path = createPath(props.form, props.width, props.height);
+  const path = createPath(props.form!, props.width!, props.height!);
   const viewport = `0 0 ${props.width} ${props.height}`;
 
   return (
-    <Box margin="4px 8px" transform={props.mirror ? "rotateX(180deg)" : "none"}>
+    <Box transform={props.mirror ? "rotateX(180deg)" : "none"}>
       <svg
         width={props.width}
         viewBox={viewport}
@@ -57,11 +57,11 @@ const TREKBox: FunctionComponent<TREKBoxProps> = (props) => {
             textAnchor="end"
             transform={
               props.mirror
-                ? `scale(1,-1) translate(0,-${2 * props.height - 36})`
+                ? `scale(1,-1) translate(0,-${2 * props.height! - 36})`
                 : "scale(1,1)"
             }
           >
-            <tspan x="140" y={props.height - 8}>
+            <tspan x="140" y={props.height! - 8}>
               {props.text}
             </tspan>
           </text>

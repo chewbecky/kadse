@@ -18,18 +18,24 @@ const TREKCountdown: FunctionComponent<TREKCountdownProps> = (props) => {
 
   return (
     <Flex direction="column" justifyContent="flex-end">
-      <Heading fontWeight="400" size="4xl" color="orange" textAlign="right">
-        <Box display="inline-block" width="24px">{`${
+      <Heading
+        fontWeight="light"
+        fontSize="128px"
+        color="orange"
+        textAlign="right"
+        lineHeight="128px"
+      >
+        <Box display="inline-block" width="44px">{`${
           timer ? Math.floor(timer / 60 / 10) : "0"
         }`}</Box>
-        <Box display="inline-block" width="24px">{`${
+        <Box display="inline-block" width="44px">{`${
           timer ? Math.floor(timer / 60) % 10 : "0"
         }`}</Box>
         :
-        <Box display="inline-block" width="24px">{`${
+        <Box display="inline-block" width="44px">{`${
           timer ? Math.floor((timer % 60) / 10) : "0"
         }`}</Box>
-        <Box display="inline-block" width="24px">{`${
+        <Box display="inline-block" width="44px">{`${
           timer ? (timer % 60) % 10 : "0"
         }`}</Box>
       </Heading>
@@ -43,10 +49,11 @@ const TREKCountdown: FunctionComponent<TREKCountdownProps> = (props) => {
       <Heading
         as="h3"
         fontWeight="400"
-        size="2xl"
+        fontSize="72px"
         color="orange"
         textAlign="right"
         py="16px"
+        lineHeight="72px"
       >
         Efficiency Mode
       </Heading>

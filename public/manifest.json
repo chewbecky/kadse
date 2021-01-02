@@ -1,5 +1,5 @@
 {
-  "short_name": "Pomodoro",
+  "short_name": "Trekking Time",
   "name": "Star Trek Promodor Timer",
   "description": "This is a simple pomodoro timer, made with ❤️ for Star Trek 🖖",
   "background-color": "#FF9400",
@@ -13,11 +13,15 @@
       "src": "apple-touch-icon.png",
       "type": "image/png",
       "sizes": "180x180"
+    },
+    {
+      "src": "android-splash-icon.png",
+      "sizes": "512x512"
     }
   ],
   "start_url": ".",
   "display": "fullscreen",
   "theme_color": "#FF9400",
-  "background_color": "#FF9400",
+  "background_color": "#DB5F63",
   "orientation": "any"
 }

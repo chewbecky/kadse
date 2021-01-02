@@ -6,8 +6,8 @@ import { Box, Flex, Heading, SimpleGrid } from "@chakra-ui/react";
 import TREKBox from "./components/TREKBox";
 import TREKTimer from "./components/TREKTimer/TREKTimer";
 import React, { useState } from "react";
-import galaxy from "./assets/galaxy.png";
-import voyager from "./assets/voyager-status.mp4";
+import TREKVideo from "./components/TREKVideo";
+import TREKBackground from "./components/TREKBackground";
 
 function App() {
   const [timer, setTimer] = useState(0);
@@ -28,76 +28,65 @@ function App() {
     longBreak: 900,
   };
 
+  let d = new Date();
+
+  d =
+    d.getFullYear() +
+    "-" +
+    ("0" + (d.getMonth() + 1)).slice(-2) +
+    "-" +
+    ("0" + d.getDate()).slice(-2) +
+    " " +
+    ("0" + d.getHours()).slice(-2) +
+    ":" +
+    ("0" + d.getMinutes()).slice(-2) +
+    ":" +
+    ("0" + d.getSeconds()).slice(-2);
+
   return (
-    <Flex
-      direction="column"
-      backgroundColor="black"
-      height="100vh"
-      p={[1, 2, 4]}
-    >
-      <Box
-        as="video"
-        position="absolute"
-        top={["400px", "320px"]}
-        left={["10%", "32%"]}
-        w={["80%", "50%"]}
-        m="0 auto"
-        autoPlay
-        muted
-        loop
+    <Box bg="black" w-full height="100vh">
+      <TREKBackground
+        visibility={["hidden", "hidden", "visible"]}
+      ></TREKBackground>
+      <SimpleGrid
+        templateRows="216px 1fr"
+        gap="104px"
+        pl="196px"
+        height="100vh"
+        py="24px"
+        pr="24px"
       >
-        <source src={voyager} type="video/mp4" />
-      </Box>
-      <Flex justifyContent="space-between" width="100%">
-        <Flex
-          direction="column"
-          justifyContent="flex-end"
-          alignItems="left"
-          visibility={["hidden", "visible"]}
-        >
-          <TREKBox text="LCARS" tint="lavender" mirror={true} form="block" />
-          <TREKBox
-            width={window.innerWidth / 3}
-            text="NCC-74656"
-            tint="purple"
-            mirror={true}
-            form="curve"
-          />
-        </Flex>
-        <Flex
-          direction="column"
-          justifyContent="flex-end"
-          flex="1"
-          visibility={["hidden", "visible"]}
-        >
-          <Box
-            width="100%"
-            height="24px"
-            backgroundColor="lavender"
-            margin="4px 8px 4px 0px"
-          ></Box>
-        </Flex>
-        <Flex
-          direction="column"
-          justifyContent="flex-end"
-          flex="5"
-          marginLeft="8px"
-        >
-          <Box position="absolute" top="20px" right="16px">
+        <SimpleGrid templateColumns="1fr 440px" gap="24px">
+          <Heading
+            fontWeight="400"
+            textAlign="right"
+            size="xl"
+            color="orange"
+            alignSelf="end"
+          >
+            Stardate {d}
+          </Heading>
+          <Flex
+            direction="column"
+            justifyContent="space-between"
+            alignItems="flex-end"
+            alignSelf="end"
+            h-full
+          >
             <Heading
-              as="h1"
               fontWeight="400"
               textAlign="right"
-              size="4xl"
+              fontSize="96px"
               color="orange"
+              height="96px"
+              lineHeight="96px"
             >
               pomodoro timer
             </Heading>
             <SimpleGrid
               gridTemplateColumns={["192px", "192px 192px"]}
               gridTemplateRows="auto"
-              gridGap="8px"
-              float="right"
+              gap="8px"
             >
               <TREKButton
                 label="pomodoro"
@@ -128,85 +117,18 @@ function App() {
                 }}
               />
             </SimpleGrid>
-          </Box>
-          <Box
-            width="100%"
-            height="24px"
-            backgroundColor="lavender"
-            marginY="4px"
-            visibility={["hidden", "visible"]}
-          ></Box>
-        </Flex>
-      </Flex>
-      <Flex
-        justifyContent="space-between"
-        width="100%"
-        flex="1"
-        /* backgroundImage={`url(${galaxy})`}
-        backgroundSize="contain"
-        backgroundPosition="center"
-        backgroundRepeat="no-repeat" */
-      >
-        <Flex direction="column" visibility={["hidden", "visible"]}>
-          <TREKBox
-            width={window.innerWidth / 3}
-            text="Captain"
-            tint="darkCoral"
-            form="curve"
-          />
-          <TREKBox text="Janeway" tint="darkCoral" form="block" mirror />
-          <TREKBox
-            text="Engage"
-            tint="orange"
-            form="block"
-            height={150}
-            mirror
-          />
-          <Box
-            backgroundColor="lightOrange"
-            flex="1 1 auto"
-            width="156px"
-            mx="8px"
-            my="4px"
-          ></Box>
-        </Flex>
-        <Flex
-          direction="column"
-          justifyContent="flex-start"
-          flex="1"
-          flexBasis="200px"
-          visibility={["hidden", "visible"]}
-        >
-          <Box
-            width="100%"
-            height="24px"
-            backgroundColor="lavender"
-            margin="4px 8px 4px 0px"
-            visibility={["hidden", "visible"]}
-          ></Box>
-        </Flex>
-        <Flex
-          marginLeft="8px"
-          direction="column"
-          justifyContent="space-between"
-          flex="5"
-        >
-          <Box
-            height="24px"
-            backgroundColor="lavender"
-            marginY="4px"
-            visibility={["hidden", "visible"]}
-          ></Box>
-          <Box position="absolute" bottom="16px" right="16px">
-            <TREKTimer
-              value={timer}
-              toggleActive={toggleActive}
-              reset={reset}
-            ></TREKTimer>
-          </Box>
-        </Flex>
-      </Flex>
-    </Flex>
+          </Flex>
+        </SimpleGrid>
+        <SimpleGrid templateColumns="2fr 1fr" gap="24px">
+          <TREKVideo maxW="56vh" justifySelf="center"></TREKVideo>
+          <TREKTimer
+            value={timer}
+            toggleActive={toggleActive}
+            reset={reset}
+          ></TREKTimer>
+        </SimpleGrid>
+      </SimpleGrid>
+    </Box>
   );
 }
 
