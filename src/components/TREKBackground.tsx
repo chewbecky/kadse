@@ -11,13 +11,14 @@ const TREKBackground: FunctionComponent<TREKBackgroundProps> = (props) => {
 
   return (
     <Grid
+      visibility={["hidden", "hidden", "visible"]}
       templateRows="120px 136px 112px 150px 48px 1fr"
       templateColumns={`${widthOfFirstColumn}px 24px 8fr 23fr`}
       position="absolute"
       width="100vw"
       height="100vh"
       gap="8px"
-      p="24px"
+      p="8"
       {...props}
     >
       <GridItem>
