@@ -3,7 +3,6 @@ import "./App.css";
 import "./theme";
 import TREKButton from "./components/TREKButton";
 import { Box, Heading, SimpleGrid } from "@chakra-ui/react";
-import TREKBox from "./components/TREKBox";
 import TREKTimer from "./components/TREKTimer/TREKTimer";
 import React, { useState } from "react";
 import TREKVideo from "./components/TREKVideo";
@@ -47,36 +46,12 @@ function App() {
     <Box bg="black">
       <TREKTemplate
         title={`Stardate ${d}`}
-        header={
-          <>
-            <Heading fontSize="sm" color="orange">
-              {Math.random() * 1000}
-            </Heading>
-            <Heading fontSize="sm" color="orange">
-              {Math.random() * 1000}
-            </Heading>
-            <Heading fontSize="sm" color="orange">
-              {Math.random() * 1000}
-            </Heading>
-            <Heading fontSize="sm" color="orange">
-              {Math.random() * 1000}
-            </Heading>
-            <Heading fontSize="sm" color="orange">
-              {Math.random() * 1000}
-            </Heading>
-            <Heading fontSize="sm" color="orange">
-              {Math.random() * 1000}
-            </Heading>
-            <Heading fontSize="sm" color="orange">
-              {Math.random() * 1000}
-            </Heading>
-          </>
-        }
         controls={
           <SimpleGrid
-            gridTemplateColumns={["192px", "192px 192px"]}
+            gridTemplateColumns={["1fr 1fr", "1fr 1fr", "192px 192px"]}
             gridTemplateRows="auto"
             gap="8px"
+            maxW="392px"
           >
             <TREKButton
               label="pomodoro"

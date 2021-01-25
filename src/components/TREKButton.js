@@ -17,11 +17,11 @@ function TREKButton(props) {
     <Button
       size="lg"
       height="56px"
-      width="192px"
+      maxWidth="192px"
       borderRadius="100px"
       backgroundColor={props.color}
       color="black"
-      fontSize="28px"
+      fontSize={["22px", "22px", "28px"]}
       letterSpacing="-0.05px"
       textAlign="right"
       display="block"

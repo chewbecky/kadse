@@ -6,6 +6,7 @@ export const styles = {
       overflowX: "hidden",
       margin: 0,
       fontFamily: "LCARSGTJ3",
+      backgroundColor: "black",
     },
     h1: {
       fontWeight: "normal",
@@ -14,6 +15,22 @@ export const styles = {
 };
 
 const theme = extendTheme({
+  components: {
+    FormLabel: {
+      baseStyle: {
+        color: "darkOrange",
+      },
+    },
+    Input: {
+      variants: {
+        outline: {
+          field: {
+            borderColor: "darkOrange",
+          },
+        },
+      },
+    },
+  },
   colors: {
     darkCoral: "#DB5F63",
     lightGreen: "#D5DABA",

@@ -5,23 +5,29 @@ import TREKBox from "./TREKBox";
 interface TREKBackgroundProps {}
 
 const TREKBackground: FunctionComponent<TREKBackgroundProps> = (props) => {
-  const widthOfFirstColumn = window.innerWidth / 2.5;
-  const widthOfTREKBox = widthOfFirstColumn;
-  console.log(widthOfFirstColumn);
+  const columnTemplateLG = `${window.innerWidth / 2.5}px 24px 8fr 22fr 1fr`;
+  const columnTemplateMD = `1fr`;
+
+  const templateAreasMD = "'fix1' 'fix2' 'fix3' 'fix4' 'fix5' 'fix6'";
+  const templateAreasLG =
+    "'fix1 . . . . .' 'fix2 md11 md12 md13 md14 md15' 'fix3 md21 md22 md23 md24 md25' 'fix4 . . . . .' 'fix5 . . . . .' 'fix6 . . . . .'";
 
   return (
     <Grid
-      visibility={["hidden", "hidden", "visible"]}
+      visibility={["hidden", "visible"]}
       templateRows="120px 136px 112px 150px 48px 1fr"
-      templateColumns={`${widthOfFirstColumn}px 24px 8fr 23fr`}
+      templateAreas={{ base: templateAreasMD, md: templateAreasLG }}
+      templateColumns={{ base: columnTemplateMD, md: columnTemplateLG }}
       position="absolute"
       width="100vw"
       height="100vh"
+      overflow="hidden"
       gap="8px"
       p="8"
+      bg="unset"
       {...props}
     >
-      <GridItem>
+      <GridItem gridArea="fix1">
         <TREKBox
           text="LCARS"
           tint="lavender"
@@ -30,9 +36,13 @@ const TREKBackground: FunctionComponent<TREKBackgroundProps> = (props) => {
           form="block"
         />
       </GridItem>
-      <GridItem rowStart={2}>
+      <GridItem gridArea="fix2">
         <TREKBox
-          width={widthOfTREKBox}
+          width={
+            window.innerWidth >= 786
+              ? window.innerWidth / 2.5
+              : window.innerWidth - 64
+          }
           height={136}
           text="NCC-74656"
           tint="purple"
@@ -41,29 +51,44 @@ const TREKBackground: FunctionComponent<TREKBackgroundProps> = (props) => {
         />
       </GridItem>
       <GridItem
-        rowStart={2}
+        gridArea="md11"
+        display={{ base: "none", md: "block" }}
         width="100%"
         height="24px"
         backgroundColor="orange"
         alignSelf="end"
       ></GridItem>
       <GridItem
-        rowStart={2}
+        gridArea="md12"
+        display={{ base: "none", md: "block" }}
         width="100%"
         height="24px"
         backgroundColor="lavender"
         alignSelf="end"
       ></GridItem>
       <GridItem
-        rowStart={2}
+        gridArea="md13"
+        display={{ base: "none", md: "block" }}
         width="100%"
         height="24px"
         backgroundColor="lavender"
         alignSelf="end"
       ></GridItem>
-      <GridItem rowStart={3}>
+      <GridItem
+        gridArea="md14"
+        display={{ base: "none", md: "block" }}
+        width="100%"
+        height="24px"
+        backgroundColor="lavender"
+        alignSelf="end"
+      ></GridItem>
+      <GridItem gridArea="fix3">
         <TREKBox
-          width={widthOfTREKBox}
+          width={
+            window.innerWidth >= 786
+              ? window.innerWidth / 2.5
+              : window.innerWidth - 64
+          }
           text="Captain"
           height={112}
           tint="darkCoral"
@@ -71,25 +96,34 @@ const TREKBackground: FunctionComponent<TREKBackgroundProps> = (props) => {
         />
       </GridItem>
       <GridItem
-        rowStart={3}
+        gridArea="md21"
+        display={{ base: "none", md: "block" }}
         width="100%"
         height="24px"
         backgroundColor="darkCoral"
       ></GridItem>
       <GridItem
-        rowStart={3}
+        gridArea="md22"
+        display={{ base: "none", md: "block" }}
         width="100%"
         height="12px"
         backgroundColor="lightOrange"
       ></GridItem>
       <GridItem
-        rowStart={3}
+        gridArea="md23"
+        display={{ base: "none", md: "block" }}
         width="100%"
         height="24px"
         backgroundColor="lavender"
       ></GridItem>
-
-      <GridItem rowStart={4}>
+      <GridItem
+        gridArea="md24"
+        display={{ base: "none", md: "block" }}
+        width="100%"
+        height="24px"
+        backgroundColor="lavender"
+      ></GridItem>
+      <GridItem gridArea="fix4">
         <TREKBox
           text="Janeway"
           height={150}
@@ -98,11 +132,11 @@ const TREKBackground: FunctionComponent<TREKBackgroundProps> = (props) => {
           mirror
         />
       </GridItem>
-      <GridItem rowStart={5}>
+      <GridItem gridArea="fix5">
         <TREKBox text="Engage" tint="orange" form="block" height={48} mirror />
       </GridItem>
       <GridItem
-        rowStart={6}
+        gridArea="fix6"
         width="156px"
         height="100%"
         backgroundColor="lightOrange"

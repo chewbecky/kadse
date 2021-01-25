@@ -2,7 +2,6 @@ import { Box, Grid, GridItem, Heading } from "@chakra-ui/react";
 import { ReactJSXElement } from "@emotion/react/types/jsx-namespace";
 import React, { FunctionComponent } from "react";
 import TREKBackground from "./TREKBackground";
-import TREKBox from "./TREKBox";
 
 interface TREKTemplateProps {
   title: ReactJSXElement;
@@ -33,11 +32,12 @@ const TREKTemplate: FunctionComponent<TREKTemplateProps> = (props) => {
       <Grid
         templateAreas={[templateAreasBase, templateAreasMd, templateAreasLg]}
         templateColumns={[columnTracksBase, columnTracksMd, columnTracksLg]}
-        templateRows={[rowTracksBase, rowTracksBase, rowTracksMd, rowTracksLg]}
+        templateRows={[rowTracksBase, rowTracksMd, rowTracksLg]}
         height={["unset", "100vh"]}
         p="8"
         justifyItems="end"
         alignItems="end"
+        overflow="hidden"
       >
         <GridItem gridArea="header" display={["none", "none", "none", "block"]}>
           {props.header}
@@ -53,7 +53,9 @@ const TREKTemplate: FunctionComponent<TREKTemplateProps> = (props) => {
             {props.title}
           </Heading>
         </GridItem>
-        <GridItem gridArea="controls">{props.controls}</GridItem>
+        <GridItem gridArea="controls" w="full" textAlign="right">
+          {props.controls}
+        </GridItem>
         <GridItem gridArea="content">{props.content}</GridItem>
         <GridItem gridArea="contentfix">{props.contentfix}</GridItem>
       </Grid>
