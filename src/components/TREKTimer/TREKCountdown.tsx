@@ -52,7 +52,7 @@ const TREKCountdown: FunctionComponent<TREKCountdownProps> = (props) => {
         fontSize="72px"
         color="orange"
         textAlign="right"
-        py="16px"
+        pt="4"
         lineHeight="72px"
       >
         Efficiency Mode

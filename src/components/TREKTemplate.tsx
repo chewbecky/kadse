@@ -22,7 +22,7 @@ const TREKTemplate: FunctionComponent<TREKTemplateProps> = (props) => {
   const columnTracksMd = "180px 1fr";
   const rowTracksMd = "96px 128px 88px  1fr 1fr";
 
-  const templateAreasBase = "'title' 'controls' 'content' 'contentfix'";
+  const templateAreasBase = "'title' 'controls' 'contentfix' 'content'";
   const columnTracksBase = "1fr";
   const rowTracksBase = "96px 128px 1fr 1fr";
 
@@ -34,7 +34,7 @@ const TREKTemplate: FunctionComponent<TREKTemplateProps> = (props) => {
         templateColumns={[columnTracksBase, columnTracksMd, columnTracksLg]}
         templateRows={[rowTracksBase, rowTracksMd, rowTracksLg]}
         height={["unset", "100vh"]}
-        p="8"
+        p="6"
         justifyItems="end"
         alignItems="end"
         overflow="hidden"
@@ -46,9 +46,10 @@ const TREKTemplate: FunctionComponent<TREKTemplateProps> = (props) => {
           <Heading
             fontWeight="400"
             textAlign="right"
-            size="3xl"
+            fontSize={["15vw", "9vw", "96px"]}
             color="orange"
             alignSelf="end"
+            lineHeight="96px"
           >
             {props.title}
           </Heading>
@@ -56,7 +57,9 @@ const TREKTemplate: FunctionComponent<TREKTemplateProps> = (props) => {
         <GridItem gridArea="controls" w="full" textAlign="right">
           {props.controls}
         </GridItem>
-        <GridItem gridArea="content">{props.content}</GridItem>
+        <GridItem gridArea="content" alignSelf="end">
+          {props.content}
+        </GridItem>
         <GridItem gridArea="contentfix">{props.contentfix}</GridItem>
       </Grid>
     </Box>

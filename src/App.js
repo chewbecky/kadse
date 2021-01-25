@@ -2,7 +2,7 @@ import "./index.css";
 import "./App.css";
 import "./theme";
 import TREKButton from "./components/TREKButton";
-import { Box, Heading, SimpleGrid } from "@chakra-ui/react";
+import { Box, SimpleGrid } from "@chakra-ui/react";
 import TREKTimer from "./components/TREKTimer/TREKTimer";
 import React, { useState } from "react";
 import TREKVideo from "./components/TREKVideo";
@@ -45,7 +45,7 @@ function App() {
   return (
     <Box bg="black">
       <TREKTemplate
-        title={`Stardate ${d}`}
+        title={`${d}`}
         controls={
           <SimpleGrid
             gridTemplateColumns={["1fr 1fr", "1fr 1fr", "192px 192px"]}
@@ -83,7 +83,6 @@ function App() {
             />
           </SimpleGrid>
         }
-        content={<TREKVideo maxW="50vh" justifySelf="center"></TREKVideo>}
         contentfix={
           <TREKTimer
             value={timer}

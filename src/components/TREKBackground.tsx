@@ -23,7 +23,7 @@ const TREKBackground: FunctionComponent<TREKBackgroundProps> = (props) => {
       height="100vh"
       overflow="hidden"
       gap="8px"
-      p="8"
+      p="6"
       bg="unset"
       {...props}
     >

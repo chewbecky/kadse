@@ -1,4 +1,4 @@
-import { AspectRatio, Box, Flex, SimpleGrid } from "@chakra-ui/react";
+import { Box, SimpleGrid } from "@chakra-ui/react";
 import React, { FunctionComponent } from "react";
 import TREKProgressSVG from "./TREKProgress/TREKProgressSVG";
 import video from "../assets/galaxy-rotating.mp4";
