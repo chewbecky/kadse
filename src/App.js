@@ -2,16 +2,29 @@ import "./index.css";
 import "./App.css";
 import "./theme";
 import TREKButton from "./components/TREKButton";
-import { Box, SimpleGrid } from "@chakra-ui/react";
+import { Box, SimpleGrid, Button, Input } from "@chakra-ui/react";
 import TREKTimer from "./components/TREKTimer/TREKTimer";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import TREKVideo from "./components/TREKVideo";
 import TREKTemplate from "./components/TREKTemplate";
+import TREKNumberGrid from "./components/TREKNumberGrid";
+import TREKSpaceConsole from "./components/TREKSpaceConsole";
+import useSound from "use-sound";
+// @ts-ignore
+import voyagerWarpCore from "./assets/voyager-warp-core.mp3";
 
 function App() {
   const [timer, setTimer] = useState(0);
   const [toggleActive, setToggleActive] = useState(false);
   const [reset, setReset] = useState(false);
+  const [play] = useSound(voyagerWarpCore, {
+    volume: 0.1,
+    loop: true,
+  });
+
+  useEffect(() => {
+    play();
+  });
 
   const setOrResetTimer = function (value) {
     if (timer === value) {
@@ -23,29 +36,15 @@ function App() {
 
   const timerSettings = {
     pomodoro: 1500,
-    shortBreak: 10,
+    shortBreak: 300,
     longBreak: 900,
   };
-
-  let d = new Date();
-
-  d =
-    d.getFullYear() +
-    "-" +
-    ("0" + (d.getMonth() + 1)).slice(-2) +
-    "-" +
-    ("0" + d.getDate()).slice(-2) +
-    " " +
-    ("0" + d.getHours()).slice(-2) +
-    ":" +
-    ("0" + d.getMinutes()).slice(-2) +
-    ":" +
-    ("0" + d.getSeconds()).slice(-2);
 
   return (
     <Box bg="black">
       <TREKTemplate
-        title={`${d}`}
+        title={"Pomodoro Timer"}
+        header={<TREKNumberGrid></TREKNumberGrid>}
         controls={
           <SimpleGrid
             gridTemplateColumns={["1fr 1fr", "1fr 1fr", "192px 192px"]}
@@ -54,12 +53,14 @@ function App() {
             maxW="392px"
           >
             <TREKButton
-              label="pomodoro"
+              label="Pomodoro"
               color="darkCoral"
               onclick={() => {
                 setOrResetTimer(timerSettings.pomodoro);
               }}
-            />
+            >
+              Pomodoro
+            </TREKButton>
             <TREKButton
               label="long break"
               color="orange"
@@ -75,13 +76,19 @@ function App() {
               }}
             />
             <TREKButton
-              label="start/stop"
+              label="engage/stop"
               color="lightGreen"
               onclick={() => {
                 setToggleActive(!toggleActive);
               }}
             />
           </SimpleGrid>
+        }
+        content={
+          <>
+            <TREKSpaceConsole></TREKSpaceConsole>
+            {/*           <TREKVideo></TREKVideo> */}
+          </>
         }
         contentfix={
           <TREKTimer

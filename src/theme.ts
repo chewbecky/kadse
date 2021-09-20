@@ -15,6 +15,15 @@ export const styles = {
 };
 
 const theme = extendTheme({
+  textStyles: {
+    content: {
+      // you can also use responsive styles
+      fontSize: ["16px", "22px"],
+      textAlign: "right",
+      lineHeight: "110%",
+      color: "orange",
+    },
+  },
   components: {
     FormLabel: {
       baseStyle: {
@@ -30,6 +39,60 @@ const theme = extendTheme({
         },
       },
     },
+    Button: {
+      baseStyle: {
+        _focus: {
+          boxShadow: "none",
+        },
+        _disabled: {
+          opacity: 0.4,
+          cursor: "not-allowed",
+          boxShadow: "none",
+        },
+        _hover: {
+          backgroundColor: "lightLavender",
+          _disabled: {
+            bg: "initial",
+          },
+        },
+        _active: {
+          backgroundColor: "lavender",
+        },
+      },
+      variants: {
+        default: {
+          display: "inline",
+          height: "3.5rem",
+          maxWidth: "12rem",
+          backgroundColor: "darkOrange",
+          color: "black",
+          fontSize: "1.75rem",
+          letterSpacing: "-0.05px",
+          textAlign: "right",
+          fontWeight: "400",
+          borderRadius: "full",
+          pt: "6",
+          pr: "6",
+        },
+        box: {
+          display: "block",
+          verticalAlign: "top",
+          minHeight: "12",
+          width: "9.75rem",
+          backgroundColor: "darkOrange",
+          color: "black",
+          fontSize: "1.75rem",
+          letterSpacing: "-0.05px",
+          textAlign: "right",
+          fontWeight: "400",
+          borderRadius: "none",
+          pr: "4",
+        },
+      },
+      sizes: {
+        md: "14",
+      },
+    },
   },
   colors: {
     darkCoral: "#DB5F63",
@@ -38,6 +101,7 @@ const theme = extendTheme({
     purple: "#9B96FF",
     lightOrange: "#FFAA7A",
     orange: "#FF9400",
+    lightLavender: "#E2E8F0",
   },
   fonts: {
     heading: `LCARSGTJ3`,
@@ -45,6 +109,9 @@ const theme = extendTheme({
   },
   colorScheme: {
     darkCoral: "#DB5F63",
+  },
+  shadows: {
+    outline: "0 0 0 4px #FF9400",
   },
   styles,
 });

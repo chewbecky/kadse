@@ -34,12 +34,17 @@ const TREKTemplate: FunctionComponent<TREKTemplateProps> = (props) => {
         templateColumns={[columnTracksBase, columnTracksMd, columnTracksLg]}
         templateRows={[rowTracksBase, rowTracksMd, rowTracksLg]}
         height={["unset", "100vh"]}
+        maxHeight={["unset", "100vh"]}
         p="6"
         justifyItems="end"
         alignItems="end"
         overflow="hidden"
       >
-        <GridItem gridArea="header" display={["none", "none", "none", "block"]}>
+        <GridItem
+          gridArea="header"
+          display={["none", "none", "none", "block"]}
+          width="full"
+        >
           {props.header}
         </GridItem>
         <GridItem gridArea="title">
@@ -57,7 +62,7 @@ const TREKTemplate: FunctionComponent<TREKTemplateProps> = (props) => {
         <GridItem gridArea="controls" w="full" textAlign="right">
           {props.controls}
         </GridItem>
-        <GridItem gridArea="content" alignSelf="end">
+        <GridItem gridArea="content" w="full" height="full">
           {props.content}
         </GridItem>
         <GridItem gridArea="contentfix">{props.contentfix}</GridItem>

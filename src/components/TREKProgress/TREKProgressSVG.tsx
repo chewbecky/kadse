@@ -48,7 +48,12 @@ const createSVG = (
     }
     case Rotation.left: {
       return (
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 640">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 32 640"
+          height="100%"
+          width="auto"
+        >
           <path
             fill={getColor(theme, tint)}
             fillRule="evenodd"
