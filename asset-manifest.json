@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.js": "/kadse/static/js/main.a9a8652b.js",
-    "static/js/845.7f887e99.chunk.js": "/kadse/static/js/845.7f887e99.chunk.js",
-    "static/js/496.03070c9b.chunk.js": "/kadse/static/js/496.03070c9b.chunk.js",
-    "static/media/milky-way.jpeg": "/kadse/static/media/milky-way.dfcc5602ac245231c4ce.jpeg",
-    "static/media/voyager-warp-core.mp3": "/kadse/static/media/voyager-warp-core.8adce59a0892b4e88325.mp3",
-    "static/media/regeneration_cycle_complete.mp3": "/kadse/static/media/regeneration_cycle_complete.6c7a652c4c517aa3b43d.mp3",
-    "service-worker.js": "/kadse/service-worker.js",
-    "static/media/LCARSGTJ3.ttf": "/kadse/static/media/LCARSGTJ3.73fff889d1b23b0344e3.ttf",
-    "static/media/buttonbeep.mp3": "/kadse/static/media/buttonbeep.e856bb6ae6d32b6abd47.mp3",
-    "index.html": "/kadse/index.html",
-    "main.a9a8652b.js.map": "/kadse/static/js/main.a9a8652b.js.map",
-    "845.7f887e99.chunk.js.map": "/kadse/static/js/845.7f887e99.chunk.js.map",
-    "496.03070c9b.chunk.js.map": "/kadse/static/js/496.03070c9b.chunk.js.map"
+    "main.js": "/trekkingTime/static/js/main.48fa848c.js",
+    "static/js/845.7f887e99.chunk.js": "/trekkingTime/static/js/845.7f887e99.chunk.js",
+    "static/js/496.03070c9b.chunk.js": "/trekkingTime/static/js/496.03070c9b.chunk.js",
+    "static/media/milky-way.jpeg": "/trekkingTime/static/media/milky-way.dfcc5602ac245231c4ce.jpeg",
+    "static/media/voyager-warp-core.mp3": "/trekkingTime/static/media/voyager-warp-core.8adce59a0892b4e88325.mp3",
+    "static/media/regeneration_cycle_complete.mp3": "/trekkingTime/static/media/regeneration_cycle_complete.6c7a652c4c517aa3b43d.mp3",
+    "service-worker.js": "/trekkingTime/service-worker.js",
+    "static/media/LCARSGTJ3.ttf": "/trekkingTime/static/media/LCARSGTJ3.73fff889d1b23b0344e3.ttf",
+    "static/media/buttonbeep.mp3": "/trekkingTime/static/media/buttonbeep.e856bb6ae6d32b6abd47.mp3",
+    "index.html": "/trekkingTime/index.html",
+    "main.48fa848c.js.map": "/trekkingTime/static/js/main.48fa848c.js.map",
+    "845.7f887e99.chunk.js.map": "/trekkingTime/static/js/845.7f887e99.chunk.js.map",
+    "496.03070c9b.chunk.js.map": "/trekkingTime/static/js/496.03070c9b.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.a9a8652b.js"
+    "static/js/main.48fa848c.js"
   ]
 }
