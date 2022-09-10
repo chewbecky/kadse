@@ -43,8 +43,6 @@ const TREKCountdown: FunctionComponent<TREKCountdownProps> = (props) => {
         seconds={
           timer && progressStart ? Math.floor((timer / progressStart) * 100) : 0
         }
-        width="300px"
-        alignSelf="flex-end"
       />
       <Heading
         as="h3"

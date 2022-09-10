@@ -1,10 +1,14 @@
-import { Button } from "@chakra-ui/react";
+import { Button, ButtonProps } from "@chakra-ui/react";
 import React from "react";
 import useSound from "use-sound";
 // @ts-ignore
 import buttonbeep from "../assets/buttonbeep.mp3";
 
-function TREKButton(props) {
+type TREKButtonProps = ButtonProps & {
+  label: string;
+};
+
+function TREKButton(props: TREKButtonProps) {
   const [play] = useSound(buttonbeep, {
     volume: 0.25,
   });
@@ -28,7 +32,7 @@ function TREKButton(props) {
       lineHeight="14px"
       paddingTop="20px"
       fontWeight="400"
-      onClick={props.onclick}
+      onClick={props.onClick}
       onMouseDown={handleClick}
     >
       {props.label}

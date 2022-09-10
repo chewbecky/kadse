@@ -1,8 +1,12 @@
-import { Box, Flex, Progress, SimpleGrid } from "@chakra-ui/react";
+import { Box, Progress } from "@chakra-ui/react";
 import React from "react";
 import TREKProgressSVG from "./TREKProgressSVG";
 
-function TREKProgress(props) {
+type TREKProgressProps = {
+  seconds: number;
+};
+
+function TREKProgress(props: TREKProgressProps) {
   return (
     <Box>
       <TREKProgressSVG rotate={0} tint="lightOrange" />

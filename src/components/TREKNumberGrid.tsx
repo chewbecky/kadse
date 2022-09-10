@@ -1,8 +1,9 @@
 import {
   Grid,
   GridItem,
-  Text,
   keyframes,
+  Text,
+  useDimensions,
   usePrefersReducedMotion,
 } from "@chakra-ui/react";
 import { getColor } from "@chakra-ui/theme-tools";
@@ -10,7 +11,10 @@ import React, {
   FunctionComponent,
   ReactNode,
   useCallback,
+  useRef,
   useState,
+  useLayoutEffect,
+  useEffect,
 } from "react";
 import theme from "../theme";
 
@@ -32,19 +36,26 @@ const changeColor = keyframes`
 const TREKNumberGrid: FunctionComponent<TREKNumberGridProps> = (props) => {
   const [columnCount, setColumnCount] = useState(10);
   const [gridTemplateColumn, setGridTemplateColumn] = useState("");
-  const numberGridRef = useCallback((node) => {
+  const boundingRectRef = useRef<HTMLDivElement>(null);
+  const [dimensions, setDimensions] = useState(window.innerWidth);
+
+  useLayoutEffect(() => {
+    window.addEventListener("resize", () => {
+      setDimensions(window.innerWidth);
+    });
     let columnCount: number = 0;
-    if (node !== null) {
-      columnCount = Math.floor((node.getBoundingClientRect().width - 196) / 36);
+    if (boundingRectRef.current !== null) {
+      columnCount = Math.floor(
+        (boundingRectRef.current.offsetWidth - 196) / 36
+      );
       setGridTemplateColumn(`36px 72px 24px repeat(${columnCount}, 36px) 32px`);
       setColumnCount(columnCount);
     }
-  }, []);
+  }, [boundingRectRef, dimensions]);
 
   const prefersReducedMotion = usePrefersReducedMotion();
 
   const setRandomNumber = (numOfDigits: number): number => {
-    console.log("getting called 2");
     return Math.floor(Math.random() * Math.pow(10, numOfDigits));
   };
 
@@ -102,7 +113,7 @@ const TREKNumberGrid: FunctionComponent<TREKNumberGridProps> = (props) => {
   };
 
   return (
-    <Grid w="full" templateColumns={gridTemplateColumn} ref={numberGridRef}>
+    <Grid w="full" templateColumns={gridTemplateColumn} ref={boundingRectRef}>
       {createGrid(props.numberOfLines)}
     </Grid>
   );

@@ -1,16 +1,14 @@
 import {
   Box,
-  keyframes,
-  usePrefersReducedMotion,
-  Text,
   HStack,
+  keyframes,
+  Text,
+  usePrefersReducedMotion,
   VStack,
-  Grid,
-  SimpleGrid,
 } from "@chakra-ui/react";
+import { getColor } from "@chakra-ui/theme-tools";
 import { FunctionComponent, ReactNode, useEffect, useState } from "react";
 import milkyWay from "../assets/milky-way.jpeg";
-import { getColor } from "@chakra-ui/theme-tools";
 import theme from "../theme";
 import TREKBracketBox from "./TREKBracketBox";
 
