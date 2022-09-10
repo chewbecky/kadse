@@ -12,13 +12,13 @@ import milkyWay from "../assets/milky-way.jpeg";
 import theme from "../theme";
 import TREKBracketBox from "./TREKBracketBox";
 
-interface StarProps {
+type StarProps = {
   size: number;
   offsetX: number;
   offsetY: number;
   rotation: number;
   animation: string | undefined;
-}
+};
 
 const Star: FunctionComponent<StarProps> = (props) => {
   return (
@@ -100,6 +100,7 @@ const TREKSpaceConsole: FunctionComponent = () => {
           offsetY={randomYOffset}
           rotation={i * 17}
           animation={animation}
+          key={i}
         ></Star>
       );
     }

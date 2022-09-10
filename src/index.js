@@ -1,18 +1,19 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import App from "./App";
-import "./index.css";
-import theme from "./theme";
-import reportWebVitals from "./reportWebVitals";
 import { ChakraProvider } from "@chakra-ui/react";
+import React from "react";
+import { createRoot } from "react-dom/client";
+import App from "./App";
 import "./assets/LCARSGTJ3.ttf";
+import "./index.css";
+import reportWebVitals from "./reportWebVitals";
 import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
+import theme from "./theme";
 
-ReactDOM.render(
+const container = document.getElementById("root");
+const root = createRoot(container); // createRoot(container!) if you use TypeScript
+root.render(
   <ChakraProvider theme={theme}>
     <App />
-  </ChakraProvider>,
-  document.getElementById("root")
+  </ChakraProvider>
 );
 
 // If you want your app to work offline and load faster, you can change

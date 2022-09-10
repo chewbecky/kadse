@@ -11,7 +11,7 @@ import {
 type Settings = "pomodoro" | "longBreak" | "shortBreak";
 
 const TREKSettings = (props: any) => {
-  const { handleSubmit, errors, register, formState } = useForm();
+  const { handleSubmit, register, formState } = useForm();
   const [pomodoro, setPomodoro] = useState("25");
   const [longBreak, setLongBreak] = useState("15");
   const [shortBreak, setShortBreak] = useState("5");
@@ -37,17 +37,15 @@ const TREKSettings = (props: any) => {
   }, []);
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
-      <FormControl isInvalid={errors.name}>
+    <form onSubmit={handleSubmit(() => {})}>
+      <FormControl isInvalid={false}>
         <FormLabel htmlFor="pomodoro">Pomodoro</FormLabel>
-        <Input name="pomodoro" placeholder={pomodoro} ref={register} />
+        <Input name="pomodoro" placeholder={pomodoro} />
         <FormLabel htmlFor="longBreak">Long Break</FormLabel>
-        <Input name="longBreak" placeholder={longBreak} ref={register} />
+        <Input name="longBreak" placeholder={longBreak} />
         <FormLabel htmlFor="shortBreak">Short Break</FormLabel>
-        <Input name="shortBreak" placeholder={shortBreak} ref={register} />
-        <FormErrorMessage>
-          {errors.name && errors.name.message}
-        </FormErrorMessage>
+        <Input name="shortBreak" placeholder={shortBreak} />
+        <FormErrorMessage></FormErrorMessage>
       </FormControl>
       <Button
         mt={4}
