@@ -3,18 +3,15 @@ import {
   GridItem,
   keyframes,
   Text,
-  useDimensions,
   usePrefersReducedMotion,
 } from "@chakra-ui/react";
 import { getColor } from "@chakra-ui/theme-tools";
 import React, {
   FunctionComponent,
   ReactNode,
-  useCallback,
+  useLayoutEffect,
   useRef,
   useState,
-  useLayoutEffect,
-  useEffect,
 } from "react";
 import theme from "../theme";
 

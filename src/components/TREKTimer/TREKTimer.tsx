@@ -29,7 +29,6 @@ const TREKTimer: FunctionComponent<TREKTimerProps> = (props) => {
   let timeoutID = useRef(0);
 
   useEffect(() => {
-    console.log("use effect init");
     setIsActive(false);
     if (timeoutID.current > 0) {
       clearTimeout(timeoutID.current);
@@ -41,7 +40,6 @@ const TREKTimer: FunctionComponent<TREKTimerProps> = (props) => {
   }, [props.value, props.reset]); // eslint-disable-line react-hooks/exhaustive-deps
 
   useEffect(() => {
-    console.log("use effect toggle");
     if (timer > 0) {
       setIsActive(!isActive);
       setTimerStart(Math.floor(new Date().getTime() / 1000) + timer);
@@ -51,20 +49,18 @@ const TREKTimer: FunctionComponent<TREKTimerProps> = (props) => {
   }, [props.toggleActive, toggleActive]); // eslint-disable-line react-hooks/exhaustive-deps
 
   useEffect(() => {
-    console.log("use effect timer", timer, isActive, timerStart);
-
     setTimerInPageTitle(timer);
     if (isActive && timerStart > 0) {
       timeoutID.current = window.setTimeout(() => {
         setTimer(timerStart - Math.floor(new Date().getTime() / 1000));
       }, 1000);
       if (timer <= 0) {
-        /* new Notification("🖖 Regeneration Cycle Complete!", {
+        new Notification("🖖 Regeneration Cycle Complete!", {
           icon: "kadse/apple-touch-icon.png",
           body: "Pormodor yo!",
           image:
             "https://i.pinimg.com/originals/96/48/68/964868019877993647b63d028761a052.png",
-        }); */
+        });
         setTimer(0);
         play();
         setToggleActive(false);

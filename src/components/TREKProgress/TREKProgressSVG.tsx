@@ -77,9 +77,6 @@ const createSVG = (
 };
 
 const TREKProgressSVG: FunctionComponent<TREKProgressSVGProps> = (props) => {
-  const color = getColor(theme, props.tint);
-  console.log(color, props.tint);
-
   return <Box>{createSVG(props.rotate, props.tint)}</Box>;
 };
 

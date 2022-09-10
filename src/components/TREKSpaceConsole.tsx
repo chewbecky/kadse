@@ -12,10 +12,6 @@ import milkyWay from "../assets/milky-way.jpeg";
 import theme from "../theme";
 import TREKBracketBox from "./TREKBracketBox";
 
-interface TREKSpaceConsoleProps {
-  numberOfLines: number;
-}
-
 interface StarProps {
   size: number;
   offsetX: number;
@@ -56,7 +52,7 @@ const DistanceTimer: FunctionComponent = () => {
   );
 };
 
-const TREKSpaceConsole: FunctionComponent<TREKSpaceConsoleProps> = (props) => {
+const TREKSpaceConsole: FunctionComponent = () => {
   const prefersReducedMotion = usePrefersReducedMotion();
 
   const createSpace = (numOfStars: number): ReactNode => {

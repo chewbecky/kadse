@@ -4,7 +4,7 @@ import React, { FunctionComponent } from "react";
 import TREKBackground from "./TREKBackground";
 
 interface TREKTemplateProps {
-  title: ReactJSXElement;
+  title: ReactJSXElement | string;
   header: ReactJSXElement;
   content: ReactJSXElement;
   contentfix: ReactJSXElement;
