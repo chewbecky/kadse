@@ -2,7 +2,7 @@
   "name": "kadse",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://chewbecky.github.io/kadse",
+  "homepage": "https://chewbecky.github.io/trekkingTime",
   "dependencies": {
     "@chakra-ui/react": "^2.3.2",
     "@emotion/react": "^11.10.4",
