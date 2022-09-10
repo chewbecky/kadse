@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.js": "/kadse/static/js/main.a9a8652b.js",
+    "main.js": "/kadse/static/js/main.8c58de4f.js",
     "static/js/845.7f887e99.chunk.js": "/kadse/static/js/845.7f887e99.chunk.js",
     "static/js/496.03070c9b.chunk.js": "/kadse/static/js/496.03070c9b.chunk.js",
     "static/media/milky-way.jpeg": "/kadse/static/media/milky-way.dfcc5602ac245231c4ce.jpeg",
@@ -10,11 +10,11 @@
     "static/media/LCARSGTJ3.ttf": "/kadse/static/media/LCARSGTJ3.73fff889d1b23b0344e3.ttf",
     "static/media/buttonbeep.mp3": "/kadse/static/media/buttonbeep.e856bb6ae6d32b6abd47.mp3",
     "index.html": "/kadse/index.html",
-    "main.a9a8652b.js.map": "/kadse/static/js/main.a9a8652b.js.map",
+    "main.8c58de4f.js.map": "/kadse/static/js/main.8c58de4f.js.map",
     "845.7f887e99.chunk.js.map": "/kadse/static/js/845.7f887e99.chunk.js.map",
     "496.03070c9b.chunk.js.map": "/kadse/static/js/496.03070c9b.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.a9a8652b.js"
+    "static/js/main.8c58de4f.js"
   ]
 }
