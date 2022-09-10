@@ -7,8 +7,8 @@ import TREKCountdown from "./TREKCountdown";
 interface TREKTimerProps {
   value: number;
   toggleActive: boolean;
-  timerStart: number;
   reset: boolean;
+  onTimerUp?: Function;
 }
 
 const setTimerInPageTitle = (timer: number) => {
@@ -20,7 +20,7 @@ const setTimerInPageTitle = (timer: number) => {
 const TREKTimer: FunctionComponent<TREKTimerProps> = (props) => {
   const [timer, setTimer] = useState(props.value);
   const [timerStart, setTimerStart] = useState(0);
-  const [isActive, setIsActive] = useState(true);
+  const [isActive, setIsActive] = useState(false);
   const [toggleActive, setToggleActive] = useState(false);
   const [progressStart, setProgressStart] = useState(props.value);
   const [play] = useSound(completeSound, {
@@ -29,14 +29,13 @@ const TREKTimer: FunctionComponent<TREKTimerProps> = (props) => {
   let timeoutID = useRef(0);
 
   useEffect(() => {
-    setIsActive(false);
     if (timeoutID.current > 0) {
       clearTimeout(timeoutID.current);
     }
     setTimerStart(0);
     setProgressStart(props.value);
-
     setTimer(props.value);
+    setToggleActive(!toggleActive);
   }, [props.value, props.reset]); // eslint-disable-line react-hooks/exhaustive-deps
 
   useEffect(() => {
@@ -63,8 +62,8 @@ const TREKTimer: FunctionComponent<TREKTimerProps> = (props) => {
         });
         setTimer(0);
         play();
-        setToggleActive(false);
         clearTimeout(timeoutID.current);
+        props.onTimerUp && props.onTimerUp();
       }
     }
   }, [timer, isActive]); // eslint-disable-line react-hooks/exhaustive-deps

@@ -65,7 +65,9 @@ const TREKTemplate: FunctionComponent<TREKTemplateProps> = (props) => {
         <GridItem gridArea="content" w="full" height="full">
           {props.content}
         </GridItem>
-        <GridItem gridArea="contentfix">{props.contentfix}</GridItem>
+        <GridItem gridArea="contentfix" w="full">
+          {props.contentfix}
+        </GridItem>
       </Grid>
     </Box>
   );

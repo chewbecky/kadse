@@ -3,7 +3,6 @@ import React from "react";
 import { createRoot } from "react-dom/client";
 import App from "./App";
 import "./assets/LCARSGTJ3.ttf";
-import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
 import theme from "./theme";

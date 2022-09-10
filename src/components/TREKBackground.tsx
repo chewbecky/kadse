@@ -1,6 +1,8 @@
-import { Box, Grid, GridItem } from "@chakra-ui/react";
-import React, { FunctionComponent } from "react";
+import { Grid, GridItem } from "@chakra-ui/react";
+import { FunctionComponent } from "react";
 import TREKBox from "./TREKBox";
+import TREKNavigation from "./TREKNavigation";
+import TREKWhiteNoise from "./TREKWhiteNoise";
 
 interface TREKBackgroundProps {}
 
@@ -15,7 +17,7 @@ const TREKBackground: FunctionComponent<TREKBackgroundProps> = (props) => {
   return (
     <Grid
       visibility={["hidden", "visible"]}
-      templateRows="120px 136px 112px 150px 48px 1fr"
+      templateRows="120px 136px 112px 150px auto 1fr"
       templateAreas={{ base: templateAreasMD, md: templateAreasLG }}
       templateColumns={{ base: columnTemplateMD, md: columnTemplateLG }}
       position="absolute"
@@ -89,7 +91,7 @@ const TREKBackground: FunctionComponent<TREKBackgroundProps> = (props) => {
               ? window.innerWidth / 2.5
               : window.innerWidth - 64
           }
-          text="Captain"
+          text=""
           height={112}
           tint="darkCoral"
           form="curve"
@@ -124,23 +126,19 @@ const TREKBackground: FunctionComponent<TREKBackgroundProps> = (props) => {
         backgroundColor="lavender"
       ></GridItem>
       <GridItem gridArea="fix4">
-        <TREKBox
-          text="Janeway"
-          height={150}
-          tint="darkCoral"
-          form="block"
-          mirror
-        />
+        <TREKBox text="" height={150} tint="darkCoral" form="block" mirror />
       </GridItem>
       <GridItem gridArea="fix5">
-        <TREKBox text="Engage" tint="orange" form="block" height={48} mirror />
+        <TREKNavigation />
       </GridItem>
       <GridItem
         gridArea="fix6"
         width="156px"
         height="100%"
         backgroundColor="lightOrange"
-      ></GridItem>
+      >
+        <TREKWhiteNoise />
+      </GridItem>
     </Grid>
   );
 };

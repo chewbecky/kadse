@@ -19,9 +19,11 @@ function TREKButton(props: TREKButtonProps) {
 
   return (
     <Button
+      {...props}
       size="lg"
       height="56px"
       maxWidth="192px"
+      width="100%"
       borderRadius="100px"
       backgroundColor={props.color}
       color="black"

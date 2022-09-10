@@ -44,17 +44,6 @@ const TREKCountdown: FunctionComponent<TREKCountdownProps> = (props) => {
           timer && progressStart ? Math.floor((timer / progressStart) * 100) : 0
         }
       />
-      <Heading
-        as="h3"
-        fontWeight="400"
-        fontSize="72px"
-        color="orange"
-        textAlign="right"
-        pt="4"
-        lineHeight="72px"
-      >
-        Efficiency Mode
-      </Heading>
     </Flex>
   );
 };
