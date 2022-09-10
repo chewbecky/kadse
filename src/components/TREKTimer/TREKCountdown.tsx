@@ -1,6 +1,6 @@
 import { Box, Flex, Heading } from "@chakra-ui/react";
+import { FunctionComponent, useEffect, useState } from "react";
 import TREKProgress from "../TREKProgress/TREKProgress";
-import React, { useEffect, useState, FunctionComponent } from "react";
 
 interface TREKCountdownProps {
   timer: number;

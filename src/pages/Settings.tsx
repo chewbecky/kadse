@@ -1,19 +1,11 @@
-import { Box, Flex, Heading, SimpleGrid } from "@chakra-ui/react";
-import { useState } from "react";
+import { Box, SimpleGrid } from "@chakra-ui/react";
 // @ts-ignore
 import TREKButton from "../components/TREKButton";
 import TREKNumberGrid from "../components/TREKNumberGrid";
 import TREKSettings from "../components/TREKSettings";
 import TREKSpaceConsole from "../components/TREKSpaceConsole";
 import TREKTemplate from "../components/TREKTemplate";
-import TREKTimer from "../components/TREKTimer/TREKTimer";
 import "../theme";
-
-const timerSettings = {
-  work: { title: "Work Cycle - 25", duration: 25 },
-  longBreak: { title: "Regeneration - 15", duration: 15 },
-  shortBreak: { title: "Regeneration - 5", duration: 10 },
-};
 
 function Pomodoro() {
   return (

@@ -1,5 +1,4 @@
 import { Button, ButtonProps } from "@chakra-ui/react";
-import React from "react";
 import useSound from "use-sound";
 // @ts-ignore
 import buttonbeep from "../assets/buttonbeep.mp3";

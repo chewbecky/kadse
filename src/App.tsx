@@ -8,7 +8,7 @@ export default function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/">
+        <Route path="/" element={<Pomodoro />}>
           <Route path="settings" element={<Settings />} />
           <Route path="pomodoro" element={<Pomodoro />} />
           <Route path="*" element={<NoPage />} />
