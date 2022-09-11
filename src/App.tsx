@@ -8,9 +8,9 @@ export default function App() {
   return (
     <HashRouter>
       <Routes>
-        <Route path="/" element={<Pomodoro />}>
-          <Route path="/settings" element={<Settings />} />
-          <Route path="*" element={<NoPage />} />
+        <Route path="/kadse" element={<Pomodoro />}>
+          <Route path="/kadse/settings" element={<Settings />} />
+          <Route path="/*" element={<NoPage />} />
         </Route>
       </Routes>
     </HashRouter>

@@ -1,9 +1,8 @@
-import { Button, IconButton } from "@chakra-ui/react";
+import { Button } from "@chakra-ui/react";
 import { FunctionComponent, useEffect, useState } from "react";
 import useSound from "use-sound";
+// @ts-ignore
 import voyagerWarpCore from "../assets/voyager-warp-core.mp3";
-import { AiFillSound } from "@react-icons/all-files/ai/AiFillSound";
-import { AiOutlineSound } from "@react-icons/all-files/ai/AiOutlineSound";
 import TREKBox from "./TREKBox";
 
 const TREKWhiteNoise: FunctionComponent = () => {
