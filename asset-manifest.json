@@ -1,9 +1,10 @@
 {
   "files": {
     "main.css": "/kadse/static/css/main.1d79b88a.css",
-    "main.js": "/kadse/static/js/main.2bae95d5.js",
+    "main.js": "/kadse/static/js/main.73719b91.js",
     "static/js/845.7f887e99.chunk.js": "/kadse/static/js/845.7f887e99.chunk.js",
     "static/js/496.03070c9b.chunk.js": "/kadse/static/js/496.03070c9b.chunk.js",
+    "static/media/planet.webp": "/kadse/static/media/planet.6b1737b1435e46e09e77.webp",
     "static/media/voyager-warp-core.mp3": "/kadse/static/media/voyager-warp-core.8adce59a0892b4e88325.mp3",
     "static/media/regeneration_cycle_complete.mp3": "/kadse/static/media/regeneration_cycle_complete.6c7a652c4c517aa3b43d.mp3",
     "service-worker.js": "/kadse/service-worker.js",
@@ -11,12 +12,12 @@
     "static/media/buttonbeep.mp3": "/kadse/static/media/buttonbeep.e856bb6ae6d32b6abd47.mp3",
     "index.html": "/kadse/index.html",
     "main.1d79b88a.css.map": "/kadse/static/css/main.1d79b88a.css.map",
-    "main.2bae95d5.js.map": "/kadse/static/js/main.2bae95d5.js.map",
+    "main.73719b91.js.map": "/kadse/static/js/main.73719b91.js.map",
     "845.7f887e99.chunk.js.map": "/kadse/static/js/845.7f887e99.chunk.js.map",
     "496.03070c9b.chunk.js.map": "/kadse/static/js/496.03070c9b.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.1d79b88a.css",
-    "static/js/main.2bae95d5.js"
+    "static/js/main.73719b91.js"
   ]
 }
