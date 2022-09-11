@@ -3,7 +3,6 @@ import { useEffect } from "react";
 import useSound from "use-sound";
 // @ts-ignore
 import voyagerWarpCore from "../assets/voyager-warp-core.mp3";
-import TREKNumberGrid from "../components/TREKNumberGrid";
 import TREKTemplate from "../components/TREKTemplate";
 import "../theme";
 

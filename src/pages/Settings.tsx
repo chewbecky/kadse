@@ -1,4 +1,5 @@
-import { Box, SimpleGrid } from "@chakra-ui/react";
+import { Box, SimpleGrid, Image } from "@chakra-ui/react";
+import TREKBracketBox from "../components/TREKBracketBox";
 // @ts-ignore
 import TREKButton from "../components/TREKButton";
 import TREKNumberGrid from "../components/TREKNumberGrid";
@@ -6,6 +7,7 @@ import TREKSettings from "../components/TREKSettings";
 import TREKSpaceConsole from "../components/TREKSpaceConsole";
 import TREKTemplate from "../components/TREKTemplate";
 import "../theme";
+import galaxy from "../assets/galaxy.gif";
 
 function Pomodoro() {
   return (
@@ -34,7 +36,7 @@ function Pomodoro() {
         }
         content={
           <>
-            <TREKSpaceConsole></TREKSpaceConsole>
+            <Image src="https://media2.giphy.com/media/D35fOVm9gSQ91icJeR/giphy.gif?cid=790b761139d388b9428e9f8b598ad41c7f938ea480acaeb8&rid=giphy.gif&ct=g"></Image>
           </>
         }
         contentfix={<TREKSettings />}
