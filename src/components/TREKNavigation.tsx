@@ -8,7 +8,7 @@ interface TREKNavigationProps {}
 const TREKNavigation: FunctionComponent<TREKNavigationProps> = (props) => {
   return (
     <Flex flexDirection="column" gap="2">
-      <Link to="/Pomodoro">
+      <Link to="/">
         <TREKBox
           text="Pomodoro"
           tint="orange"

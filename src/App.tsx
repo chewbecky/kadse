@@ -9,8 +9,7 @@ export default function App() {
     <HashRouter>
       <Routes>
         <Route path="/" element={<Pomodoro />}>
-          <Route path="settings" element={<Settings />} />
-          <Route path="pomodoro" element={<Pomodoro />} />
+          <Route path="/settings" element={<Settings />} />
           <Route path="*" element={<NoPage />} />
         </Route>
       </Routes>
