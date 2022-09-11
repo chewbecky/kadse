@@ -54,12 +54,6 @@ const TREKTimer: FunctionComponent<TREKTimerProps> = (props) => {
         setTimer(timerStart - Math.floor(new Date().getTime() / 1000));
       }, 1000);
       if (timer <= 0) {
-        new Notification("🖖 Regeneration Cycle Complete!", {
-          icon: "kadse/apple-touch-icon.png",
-          body: "Pormodor yo!",
-          image:
-            "https://i.pinimg.com/originals/96/48/68/964868019877993647b63d028761a052.png",
-        });
         setTimer(0);
         play();
         clearTimeout(timeoutID.current);

@@ -1,32 +1,16 @@
 import { Box, Flex, Heading, SimpleGrid } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
+import {
+  defaultTimerSettings,
+  Setting,
+} from "../components/settings/defaultSettings";
 // @ts-ignore
 import TREKButton from "../components/TREKButton";
 import TREKConsoleWidget from "../components/TREKConsoleWidget";
 import TREKNumberGrid from "../components/TREKNumberGrid";
-import TREKSpaceConsole from "../components/TREKSpaceConsole";
 import TREKTemplate from "../components/TREKTemplate";
 import TREKTimer from "../components/TREKTimer/TREKTimer";
 import "../theme";
-
-export interface Setting {
-  title: string;
-  duration: number;
-}
-
-export interface Settings {
-  work: Setting;
-  longBreak: Setting;
-  shortBreak: Setting;
-  cycles: number;
-}
-
-const defaultTimerSettings: Settings = {
-  work: { title: "Work Cycle - 25", duration: 1500 },
-  longBreak: { title: "Regeneration - 15", duration: 900 },
-  shortBreak: { title: "Regeneration - 5", duration: 300 },
-  cycles: 3,
-};
 
 function Pomodoro() {
   const [timer, setTimer] = useState(0);
@@ -122,7 +106,13 @@ function Pomodoro() {
           />
         }
         contentfix={
-          <Flex flexDirection="column" pl="14">
+          <Flex
+            flexDirection="column"
+            pl="14"
+            height="full"
+            width="full"
+            justifyContent="flex-end"
+          >
             <TREKTimer
               value={timer}
               toggleActive={toggleActive}
@@ -138,7 +128,7 @@ function Pomodoro() {
               pt="4"
               lineHeight="72px"
             >
-              {currentTimerSettings}
+              {currentTimerSettings || "Engage Efficiency"}
             </Heading>
           </Flex>
         }
