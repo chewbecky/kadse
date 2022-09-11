@@ -21,6 +21,10 @@ const TREKWhiteNoise: FunctionComponent = () => {
 
   return (
     <Button
+      variant="unstyled"
+      maxW="100%"
+      _hover={{ backgroundColor: "none" }}
+      _active={{ backgroundColor: "none" }}
       onClick={() => {
         if (soundIsOn) {
           setSoundIsOn(false);
@@ -35,7 +39,10 @@ const TREKWhiteNoise: FunctionComponent = () => {
     >
       <TREKBox
         text={soundIsOn ? "Stop Noise" : "Start Noise"}
-        tint="lightOrange"
+        tint="orange"
+        form="block"
+        height={48}
+        mirror
       />
     </Button>
   );

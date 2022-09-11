@@ -2,6 +2,7 @@ import { Flex } from "@chakra-ui/react";
 import { FunctionComponent } from "react";
 import { Link } from "react-router-dom";
 import TREKBox from "./TREKBox";
+import TREKWhiteNoise from "./TREKWhiteNoise";
 
 interface TREKNavigationProps {}
 
@@ -26,6 +27,7 @@ const TREKNavigation: FunctionComponent<TREKNavigationProps> = (props) => {
           mirror
         />
       </Link>
+      <TREKWhiteNoise />
     </Flex>
   );
 };
