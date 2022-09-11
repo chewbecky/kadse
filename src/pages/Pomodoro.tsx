@@ -2,6 +2,7 @@ import { Box, Flex, Heading, SimpleGrid } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 // @ts-ignore
 import TREKButton from "../components/TREKButton";
+import TREKConsoleWidget from "../components/TREKConsoleWidget";
 import TREKNumberGrid from "../components/TREKNumberGrid";
 import TREKSpaceConsole from "../components/TREKSpaceConsole";
 import TREKTemplate from "../components/TREKTemplate";
@@ -115,9 +116,10 @@ function Pomodoro() {
           </SimpleGrid>
         }
         content={
-          <>
-            <TREKSpaceConsole></TREKSpaceConsole>
-          </>
+          <TREKConsoleWidget
+            showAim
+            imgUrl="https://media4.giphy.com/media/RHIKETUlUINYvV7CAO/giphy.gif?cid=ecf05e47i6wbc1o661v4brw7w7xfm1soqj56vt4kjrt8soui&rid=giphy.gif&ct=g"
+          />
         }
         contentfix={
           <Flex flexDirection="column" pl="14">

@@ -8,6 +8,7 @@ import TREKSpaceConsole from "../components/TREKSpaceConsole";
 import TREKTemplate from "../components/TREKTemplate";
 import "../theme";
 import galaxy from "../assets/galaxy.gif";
+import TREKConsoleWidget from "../components/TREKConsoleWidget";
 
 function Pomodoro() {
   return (
@@ -34,11 +35,7 @@ function Pomodoro() {
             />
           </SimpleGrid>
         }
-        content={
-          <>
-            <Image src="https://media2.giphy.com/media/D35fOVm9gSQ91icJeR/giphy.gif?cid=790b761139d388b9428e9f8b598ad41c7f938ea480acaeb8&rid=giphy.gif&ct=g"></Image>
-          </>
-        }
+        content={<TREKConsoleWidget />}
         contentfix={<TREKSettings />}
       ></TREKTemplate>
     </Box>
