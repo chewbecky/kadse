@@ -50,6 +50,7 @@ function SettingsPage() {
     formState: { errors },
   } = useForm<FormValues>({
     defaultValues: formValues(currentSettings),
+    shouldUnregister: false,
   });
 
   const onSubmit = (data: FieldValues) => {

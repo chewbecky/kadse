@@ -1,6 +1,7 @@
 import { Box, HStack, VStack, Text } from "@chakra-ui/react";
 import { FunctionComponent } from "react";
 import TREKBracketBox from "./TREKBracketBox";
+import Planet from "../assets/planet.webp";
 
 type TREKConsoleWidgetProps = {
   imgUrl?: string;
@@ -8,7 +9,7 @@ type TREKConsoleWidgetProps = {
 };
 
 const TREKConsoleWidget: FunctionComponent<TREKConsoleWidgetProps> = ({
-  imgUrl = "https://media3.giphy.com/media/MDa6dnB0CABmv9N1X4/giphy.gif?cid=ecf05e470l15ew15r6xp0y76r9v9y2qzwlg5jdayndr14ddl&rid=giphy.gif&ct=g",
+  imgUrl = Planet,
   showAim = false,
 }) => {
   return (
