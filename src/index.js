@@ -6,6 +6,7 @@ import "./assets/LCARSGTJ3.ttf";
 import reportWebVitals from "./reportWebVitals";
 import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
 import theme from "./theme";
+import "./index.css";
 
 const container = document.getElementById("root");
 const root = createRoot(container); // createRoot(container!) if you use TypeScript
