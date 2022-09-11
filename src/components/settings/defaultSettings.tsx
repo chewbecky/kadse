@@ -19,7 +19,7 @@ export const defaultTimerSettings: Settings = {
 
 export const longerTimerSettings: Settings = {
   work: { title: "Work Cycle - 50", duration: 3000 },
-  longBreak: { title: "Regeneration - 10", duration: 600 },
-  shortBreak: { title: "Regeneration - 30", duration: 1800 },
+  longBreak: { title: "Regeneration - 30", duration: 1800 },
+  shortBreak: { title: "Regeneration - 10", duration: 600 },
   cycles: 3,
 };
