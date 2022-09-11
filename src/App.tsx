@@ -9,7 +9,7 @@ export default function App() {
     <HashRouter>
       <Routes>
         <Route path="/kadse" element={<Pomodoro />}>
-          <Route path="/kadse/settings" element={<Settings />} />
+          <Route path="/settings" element={<Settings />} />
           <Route path="/*" element={<NoPage />} />
         </Route>
       </Routes>
